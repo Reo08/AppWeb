@@ -1,0 +1,202 @@
+.info-curso, .info-test {
+    background-color: #fff;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 17px 26px 17px 26px;
+}
+.info-curso div {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+.info-curso div a{
+    font-size: 16px;
+    text-decoration: none;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    padding: 6px 25px;
+    margin-right: 13px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+.info-curso div a:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+.info-curso div button {
+    background-color: gray;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid gray;
+}
+
+
+
+.modulos-de-curso, .cont-form-test {
+    height: auto;
+    background-color: #fff;
+    padding: 20px 30px 20px 30px;
+}
+.modulos-de-curso > div {
+    height: auto;
+    border-bottom: 1px solid rgb(182, 181, 181);
+} 
+.modulos-de-curso > div h2 {
+    margin-bottom: 10px;
+}
+.modulos-de-curso > div a {
+    margin-bottom: 17px;
+    font-size: 16px;
+    display: inline-block;
+    text-decoration: none;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    padding: 6px 25px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+.modulos-de-curso > div a:first-child {
+    margin-right: 8px;
+}
+.modulos-de-curso > div a:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+.modulos-de-curso .modulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid rgb(182, 181, 181);
+    height: 30px;
+    text-decoration: none;
+    color: #000;
+}
+.modulos-de-curso .modulo:hover {
+    color: blue;
+}
+
+
+
+
+/* Aqui estan lo estilos de formTest */
+
+.cont-form-test form {
+    width: 430px;
+    padding: 20px;
+    margin: 0px auto;
+}
+form .nombre-test {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #000;
+    position: sticky;
+    top: 81px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+form .nombre-test input {
+    height: 47px;
+    padding-left: 15px;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.nombre-test label {
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+.nombre-test div {
+    display: flex;
+    justify-content: center;
+}
+.nombre-test div button {
+    width: 106px;
+    height: 35px;
+    font-size: 15px;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    margin-right: 13px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+.nombre-test div button:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+.nombre-test div a {
+    width: 106px;
+    height: 35px;
+    background-color: gray;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+form .preguntas {
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000;
+}
+.preguntas > input {
+}
+.preguntas input[type="text"] {
+    height: 47px;
+    padding-left: 15px;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.preguntas .label{
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.preguntas .cont-respuestas {
+    border-top: 1px solid #adadad;
+    border-bottom: 1px solid #adadad;
+    padding: 10px 0px;
+}
+.cont-respuestas > div{
+    margin-top: 10px;
+}
+.cont-respuestas > div:first-child{
+    margin-top: 0px;
+}
+.cont-respuestas > div input[type="radio"] {
+    margin-right: 10px;
+}
+.cont-respuestas > div input[type="text"]{
+    width: 300px;
+}
+
+small{
+    color: red;
+}
+
+.modulos-de-curso > div .deshabilitado{
+    background-color: #8d8d8d;
+    border: 1px solid #8d8d8d;
+    cursor: none;
+}

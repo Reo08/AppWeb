@@ -1,0 +1,22 @@
+.cont-notas {
+    background-color: #fff;
+    height: 165px;
+    padding: 20px 30px 0px 30px;
+}
+.cont-notas ul li {
+    border-bottom: 1px solid rgb(166, 166, 166);
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.cont-notas ul li a {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    color: #000;
+}
+.cont-notas ul li a:hover {
+    text-decoration: dashed;
+    color: blue;
+}
