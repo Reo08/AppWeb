@@ -22,7 +22,7 @@ class CreandoCurso extends FormRequest
     public function rules(): array
     {
         return [
-            "nombre_curso" => "required|max:100|unique:cursos,nombre_curso",
+            "nombre_curso" => "required|max:100",
             "descripcion" => "required|max:255"
         ];
     }

@@ -54,9 +54,7 @@
             <li>Inicio</li>
             <li><a href="{{route('area-personal.perfil')}}"><span class="material-symbols-outlined">person</span> Perfil</a></li>
             <li><a href="{{route('area-personal')}}" class="{{request()->routeIs('area-personal')?'active':''}}"><span class="material-symbols-outlined">home</span> Area Personal</a></li>
-            @if (Auth::user()->rol == "alumno")
-                <li><a href="{{route('area-personal.mis-cursos')}}" class="{{request()->routeIs('area-personal.mis-cursos')?'active':''}}"><span class="material-symbols-outlined">cases</span> Mis Cursos</a></li>
-            @endif
+            <li><a href="{{route('area-personal.mis-cursos')}}" class="{{request()->routeIs('area-personal.mis-cursos')?'active':''}}"><span class="material-symbols-outlined">cases</span> Mis Cursos</a></li>
             <li><a href="{{route('area-personal.notas')}}" class="{{request()->routeIs('area-personal.notas')?'active':''}}"><span class="material-symbols-outlined">grade</span> Notas</a></li>
             <li><a href="{{route('area-personal.configuracion')}}" class="{{request()->routeIs('area-personal.configuracion')?'active':''}}"><span class="material-symbols-outlined">settings</span> Configuraciones</a></li>
             @if (Auth::user()->admin == 1)

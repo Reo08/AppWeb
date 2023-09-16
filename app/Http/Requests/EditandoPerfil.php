@@ -23,9 +23,8 @@ class EditandoPerfil extends FormRequest
     {
         return [
             "nombre" => "required",
-            "telefono" => "required|numeric",
-            "celular" => "required|numeric",
-            "direccion" => "required"
+            "telefono" => "nullable|numeric",
+            "celular" => "nullable|numeric"
         ];
     }
     public function attributes()
@@ -33,8 +32,7 @@ class EditandoPerfil extends FormRequest
         return [
             "nombre" => "Nombre",
             "telefono" => "Telefono",
-            "celular" => "Celular",
-            "direccion" => "Direccion"
+            "celular" => "Celular"
         ];
     }
 }

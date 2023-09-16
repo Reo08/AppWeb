@@ -89,8 +89,6 @@
                 <p>{{$infoUsuario->telefono}}</p>
                 <p>Celular</p>
                 <p>{{$infoUsuario->celular}}</p>
-                <p>Direccion</p>
-                <p>{{$infoUsuario->direccion}}</p>
                 <div>
                     <a href="{{route('area-personal.perfil.editarPerfil')}}">Editar</a>
                 </div>

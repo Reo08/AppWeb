@@ -3,6 +3,7 @@
 @section('titulo', 'Configuracion')
 @section('cssJs')
     <link rel="stylesheet" href="/app-web/resources/css/configuracion.css">
+    <script src="/app-web/resources/js/configuracion.js" defer></script>
 @endsection
     
 @section('titulo-encabezado', 'Configuraciones')
@@ -17,7 +18,7 @@
         <ul>
             <li><a href="{{route('area-personal.perfil')}}">Editar perfil</a></li>
             <li> <a href="{{route('cambiar-contrasena')}}">Cambiar contraseña</a></li>
-            <li><a href="">Eliminar cuenta</a></li>
+            <li><a class="eliminar-cuenta" href="{{route('eliminando-cuenta-propia')}}">Eliminar cuenta</a></li>
         </ul>
     </div>
     @include('profesor.alerta.alerta')

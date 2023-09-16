@@ -14,7 +14,7 @@
     <div class="buscar-curso">
         <h2>Cursos</h2>
         <p>Todos los cursos agregados</p>
-        <input type="search" class="buscar">
+        <input type="search" class="buscar" placeholder="Nombre del curso">
     </div>
     {{-- Aqui irian todos los cursos agregados --}}
     <div class="todos-cursos">
@@ -25,7 +25,9 @@
                 </div>
                 <div class="cursoCard-info">
                     <h3>{{$curso->nombre_curso}}</h3>
-                    <p>id: {{$curso->id_cursos}}</p>
+                    @if (Auth::user()->admin == 1 || $cursos[0]->id_usuarios == Auth::user()->identificacion)
+                        <p>id: {{$curso->id_cursos}}</p>
+                    @endif
                     <p>Descripcion: {{$curso->descripcion}}</p>
                     <p>Profesor: {{$curso->nombre}}</p>
                 </div>

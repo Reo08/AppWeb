@@ -37,6 +37,7 @@ Route::middleware('auth')->group(function(){
 
     Route::get('area-personal/mis-cursos', [PlataformaController::class, 'misCursos'])->name('area-personal.mis-cursos');
     Route::get('area-personal/notas', [PlataformaController::class, 'notas'])->name('area-personal.notas');
+    Route::get('area-personal/notas/{curso}', [PlataformaController::class, 'notaDeCurso'])->name('nota-de-curso');
 
 
     Route::get('area-personal/configuracion', [PlataformaController::class, 'configuracion'])->name('area-personal.configuracion');
@@ -47,6 +48,8 @@ Route::middleware('auth')->group(function(){
     Route::get('area-personal/perfil/editar', [PlataformaController::class, 'editarPerfil'])->name('area-personal.perfil.editarPerfil');
     Route::put('editando-perfil', [PlataformaController::class, 'editandoPerfil'])->name('editando-perfil');
     Route::put('editando-img', [PlataformaController::class, 'editandoImg'])->name('editando-img');
+
+    Route::get('eliminando-propia-cuenta', [PlataformaController::class,'eliminandoCuentaPropia'])->name('eliminando-cuenta-propia');
 
     Route::get('area-personal/cuentas', [PlataformaController::class, 'cuentas'])->name('area-personal.cuentas');
     Route::get('area-personal/cuentas/agregar-profesor', [PlataformaController::class, 'agregarProfesor'])->name('area-personal.cuentas.agregarProfesor');

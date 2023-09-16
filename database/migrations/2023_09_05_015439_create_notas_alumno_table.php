@@ -16,8 +16,8 @@ return new class extends Migration
             $table->integer('nota')->nullable();
             $table->boolean('test_enviado')->default(1)->nullable();
             $table->string('identificacion')->nullable();
-            $table->unsignedInteger('id_modulos')->nullable();
-            $table->foreign('id_modulos')->references('id_modulos')->on('modulos')->onDelete('cascade');
+            $table->unsignedInteger('id_cursos')->nullable();
+            $table->foreign('id_cursos')->references('id_cursos')->on('cursos')->onDelete('cascade');
             $table->foreign('identificacion')->references('identificacion')->on('usuarios')->onDelete('cascade');
             $table->timestamps();
         });

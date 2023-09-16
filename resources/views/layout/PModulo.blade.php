@@ -77,6 +77,7 @@
                     $x = true;
                     request()->routeIS('test')? $x = false : $x = true
                 @endphp
+                <li><a href="{{route('curso', ['curso' => $buscarCurso[0]])}}">Curso</a></li>
                 @foreach ($modulos as $modulo)
                     <li><a href="{{route('modulo',['curso'=> $buscarCurso[0],'modulo'=> $modulo])}}" class="{{ $x==true?$modulo->id_modulos==$buscarModulo[0]->id_modulos?'modulo-seleccionado':'':''}}">Modulo {{$num}}</a></li>
                     @php

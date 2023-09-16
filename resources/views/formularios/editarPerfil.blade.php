@@ -18,7 +18,7 @@
             @csrf
             @method('put')
             <label for="">Nombre</label>
-            <input type="text" name="nombre" value="{{Auth::user()->nombre}}">
+            <input type="text" name="nombre" required value="{{Auth::user()->nombre}}">
             @error('nombre')
                 <small>*{{$message}}</small>
             @enderror
@@ -30,11 +30,6 @@
             <label for="">Celular</label>
             <input type="text" name="celular" value="{{$infoUsuario->celular}}" title="Solo numeros y un maximo de 13 digitos" pattern="^\d{1,13}$">
             @error('celular')
-                <small>*{{$message}}</small>
-            @enderror
-            <label for="">Direccion</label>
-            <input type="text" name="direccion" value="{{$infoUsuario->direccion}}" title="Maximo 30 caracteres" pattern="^.{1,30}$">
-            @error('direccion')
                 <small>*{{$message}}</small>
             @enderror
             <div>

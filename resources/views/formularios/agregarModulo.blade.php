@@ -41,4 +41,5 @@
             </div>
         </form>
     </div>
+    @include('profesor.alerta.alerta')
 @endsection

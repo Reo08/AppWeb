@@ -49,7 +49,7 @@ main {
 }
 
 .main-cont-datos {
-    height: 600px;
+    height: 577px;
     padding-top: 150px;
     border-bottom: 1px solid gray;
     display: flex;
@@ -57,18 +57,18 @@ main {
 }
 .main-cont-datos > div {
     width: 750px;
-    height: 390px;
+    height: 380px;
     padding: 20px;
     background-color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 15% 12% 12% 12% 12% 12% 12% 12%;
+    grid-template-rows: 15% 13% 13% 13% 13% 17% 13%;
 }
 .main-cont-datos div h2 {
     grid-area: 1/1/2/3;
 }
 .main-cont-datos > div > div {
-    grid-area: 8/1/9/3;
+    grid-area: 7/1/8/3;
     display: flex;
     justify-content: center;
 }

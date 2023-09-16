@@ -19,10 +19,12 @@ use App\Http\Requests\EnviandoRespuestasTest;
 use App\Http\Requests\InscribiendoAlumno;
 use App\Http\Requests\Login;
 use App\Http\Requests\VinculandoProfesor;
+use App\Models\Curso;
 use App\Models\Cursos;
 use App\Models\InfoUsuarios;
 use App\Models\Inscripciones;
 use App\Models\Modulos;
+use App\Models\NotasAlumnos;
 use App\Models\PdfsModulos;
 use App\Models\PreguntasTest;
 use App\Models\RespuestasTest;
@@ -35,10 +37,19 @@ use PhpParser\Node\Stmt\Return_;
 
 class RemplazarInscripcion {
     public $identificacion;
+    public $estado = null;
 
     public function __construct($identificacion)
     {
         $this->identificacion = $identificacion;
+    }
+}
+class RemplazarNota {
+    public $test_enviado;
+
+    public function __construct($test_enviado)
+    {
+        $this->test_enviado = $test_enviado;
     }
 }
 class RemplazarPreguntasTest {
@@ -46,6 +57,7 @@ class RemplazarPreguntasTest {
     public $respuesta_uno;
     public $respuesta_dos;
     public $respuesta_tres;
+    public $correcta = "ninguna";
 
     public function __construct($pregunta,$respuesta_uno,$respuesta_dos,$respuesta_tres)
     {
@@ -65,6 +77,11 @@ class PlataformaController extends Controller
         $usuario = User::where('correo', $request->correo)->first();
 
         // return $usuario->contrasena.' -  '.bcrypt($request->contrasena);
+        if(!$usuario){
+            throw ValidationException::withMessages([
+                'correo' => 'Estas credenciales no coinciden con nuestros registros'
+            ]);
+        }
 
         if($usuario->contrasena === md5($request->contrasena)){
             Auth::login($usuario);
@@ -87,7 +104,7 @@ class PlataformaController extends Controller
 
     public function areaPersonal(){
         // $cursos = Cursos::all();
-        $cursos = Cursos::leftjoin('usuarios','cursos.identificacion', '=','usuarios.identificacion')->select('cursos.*','usuarios.nombre as nombre')->get();
+        $cursos = Cursos::leftjoin('usuarios','cursos.identificacion', '=','usuarios.identificacion')->select('cursos.*','usuarios.nombre as nombre','usuarios.identificacion as id_usuarios')->get();
         return view('profesor.areaPersonal', compact('cursos'));
     }
     public function administrar(){
@@ -97,6 +114,12 @@ class PlataformaController extends Controller
         return view('formularios.crearCurso');
     }
     public function creandoCurso(CreandoCurso $request){
+
+        $buscarCurso = Cursos::where('nombre_curso','=',$request->nombre_curso)->get();
+        if(count($buscarCurso) > 0){
+            return redirect()->route('administrar.crear-curso')->with('alert','El nombre del modulo ya existe y no puede haber un modulo con el mismo nombre.');
+        }
+
         $creandoCurso = new Cursos();
         $creandoCurso->nombre_curso = $request->nombre_curso;
         $creandoCurso->slug = Str::slug($request->nombre_curso,'-');
@@ -122,7 +145,7 @@ class PlataformaController extends Controller
         }
         
         if($buscarVinculacion >0){
-            return redirect()->route('area-personal.administrar')->with('alert', 'Ya existe una vinculacion, desvincula primero para poder hacer una nueva vinculacion');
+            return redirect()->route('administrar')->with('alert', 'Ya existe una vinculacion, desvincula primero para poder hacer una nueva vinculacion');
         }else {
             $curso = Cursos::find($request->id_cursos);
             $curso->identificacion = $request->identificacion;
@@ -215,7 +238,17 @@ class PlataformaController extends Controller
         return view('profesor.misCursos', compact('cursos', 'cursosAlumnos'));
     }
     public function notas(){
-        return view('profesor.notas');
+        $todosLosCursos = Cursos::all();
+        $cursos = Cursos::where('identificacion','=', Auth::user()->identificacion)->get();
+        $cursosAlumnos = Cursos::leftjoin('inscripciones','cursos.id_cursos', '=','inscripciones.id_cursos')->select('cursos.*','inscripciones.estado as estado')->where('inscripciones.identificacion', '=',Auth::user()->identificacion)->get();
+        return view('profesor.notas', compact('cursos','cursosAlumnos','todosLosCursos'));
+    }
+    public function notaDeCurso($curso){
+        $buscarCurso = Cursos::where('slug','=',$curso)->get();
+        $notasAlumnos = NotasAlumnos::leftjoin('usuarios','notas_alumno.identificacion','=','usuarios.identificacion')->select('notas_alumno.*','usuarios.nombre')->where('notas_alumno.id_cursos','=',$buscarCurso[0]->id_cursos)->get();
+        $notaIndividual = NotasAlumnos::where('id_cursos','=',$buscarCurso[0]->id_cursos)->where('identificacion','=',Auth::user()->identificacion)->get();
+
+        return view('profesor.cursos.notaDeCurso', compact('buscarCurso','notasAlumnos','notaIndividual'));
     }
 
 
@@ -253,7 +286,6 @@ class PlataformaController extends Controller
         $infoUsuario = InfoUsuarios::where('identificacion','=',$usuario->identificacion)->get();
         $infoUsuario[0]->telefono =  $request->telefono;
         $infoUsuario[0]->celular = $request->celular;
-        $infoUsuario[0]->direccion = $request->direccion;
         $infoUsuario[0]->update();
         return redirect()->route('area-personal.perfil')->with('alert', 'Datos actualizados');
     }
@@ -269,6 +301,18 @@ class PlataformaController extends Controller
             $usuario->update();
             return redirect()->route('area-personal.perfil')->with('alert','Imagen de perfil ha sido actualizada');
         }
+    }
+
+
+    public function eliminandoCuentaPropia(){
+
+        $cuentaPropia = User::where('correo','=', Auth::user()->correo)->first();
+        $cuentaPropia->delete();
+        
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+        return redirect()->route('index');
     }
 
 
@@ -427,11 +471,40 @@ class PlataformaController extends Controller
                 $preguntasTest[] = $objeto;
             }
         }
-        return view('profesor.cursos.test', compact('buscarCurso','buscarModulo','modulos','pdfsModulos','buscarTest','preguntasTest','inscripcionAlumno'));
+
+        $buscarNotas = NotasAlumnos::where('identificacion', '=', Auth::user()->identificacion)->where('id_cursos','=',$buscarCurso[0]->id_cursos)->get();
+        if(count($buscarNotas) == 0){
+            $objeto = new RemplazarNota(0);
+            $buscarNotas = [$objeto];
+        }
+
+        return view('profesor.cursos.test', compact('buscarCurso','buscarModulo','modulos','pdfsModulos','buscarTest','preguntasTest','inscripcionAlumno','buscarNotas'));
     }
     public function enviandoRespuestasTest(EnviandoRespuestasTest $request,$curso,$modulo,$test){
         //Completar lo que falta, y para que no vuelvan a repetir el test cambiamos la columna "test_enviado" en la tabla notas_alumno
-        return $request;
+        $buscarCurso = Cursos::where("slug","=",$curso)->get();
+        $buscarModulo = Modulos::where('slug','=',$modulo)->where('id_cursos','=',$buscarCurso[0]->id_cursos)->get();
+        $buscarTest = Test::where('slug','=',$test)->where('id_cursos','=',$buscarCurso[0]->id_cursos)->get();
+        $buscarPreguntas = PreguntasTest::where('id_test','=',$buscarTest[0]->id_test)->get();
+
+        $nota = 0;
+        $mal = 0;
+        $respuestasElegidas = [$request->P1opcion,$request->P2opcion,$request->P3opcion,$request->P4opcion,$request->P5opcion];
+
+        for ($i=0; $i < 5; $i++) { 
+            $buscarPreguntas[$i]->correcta == $respuestasElegidas[$i] ? $nota++ : $mal++;
+        }
+
+        $nuevaNota = new NotasAlumnos();
+        $nuevaNota->nota = $nota;
+        $nuevaNota->identificacion = Auth::user()->identificacion;
+        $nuevaNota->id_cursos = $buscarCurso[0]->id_cursos;
+        $nuevaNota->save();
+
+        $cambiarEstadoInscripcion = Inscripciones::where('identificacion','=',Auth::user()->identificacion)->where('id_cursos','=',$buscarCurso[0]->id_cursos)->first();
+        $cambiarEstadoInscripcion->estado = 0;
+        $cambiarEstadoInscripcion->update();
+        return redirect()->route('area-personal.mis-cursos')->with('alert','Test enviado, en la seccion de notas podra ver el resultado.');
     }
     public function eliminandoTest($curso,$test){
         $buscarCurso = Cursos::where('slug','=',$curso)->get();
@@ -447,6 +520,10 @@ class PlataformaController extends Controller
     }
     public function agregandoModulo(AgregandoModulo $request, $curso){
         $buscarCurso = Cursos::where('slug','=',$curso)->get();
+        $buscarModulo = Modulos::where('nombre_modulo','=',$request->nombre_modulo)->get();
+        if(count($buscarModulo) > 0){
+            return redirect()->route('agregar-modulo', ['curso' => $buscarCurso[0]])->with('alert','El nombre del modulo ya existe y no puede haber un modulo con el mismo nombre.');
+        }
 
         if($request->hasFile('video')){
             $path = "videosModulos/";
