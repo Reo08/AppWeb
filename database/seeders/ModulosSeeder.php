@@ -17,7 +17,6 @@ class ModulosSeeder extends Seeder
         $modulo1 = new Modulos();
         $modulo1->nombre_modulo = "Nombre del primer modulo";
         $modulo1->slug = Str::slug("Nombre del primer modulo",'-');
-        $modulo1->url_video = "/app-web/storage/app/public/videosModulos/aplicativo-webmp4.mp4";
         $modulo1->desc_modulo = "Esta es una descripcion del modulo";
         $modulo1->id_cursos = 1;
         $modulo1->save();

@@ -1,6 +1,5 @@
 const d = document
 
-
 const $form = d.querySelector('.form-agregarModulo')
 const $input = d.querySelector('input[name="url_youtube"]')
 

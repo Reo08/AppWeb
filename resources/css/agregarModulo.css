@@ -11,12 +11,12 @@
 }
 .form-agregarModulo {
     width: 350px;
-    height: 490px;
+    height: auto;
     margin: 0px auto;
     display: flex;
     flex-direction: column;
 }
-.form-agregarModulo input[name="nombre_modulo"] {
+.form-agregarModulo input[name="nombre_modulo"], .form-agregarModulo input[name="url_youtube"] {
     height: 47px;
     padding-left: 15px;
     outline: none;
@@ -40,6 +40,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 28px;
+    margin-bottom: 25px;
 }
 .form-agregarModulo div button {
     width: 100px;
@@ -75,5 +76,8 @@
     display: none;
 }
 .small, .smallArea {
+    color: red;
+}
+small {
     color: red;
 }

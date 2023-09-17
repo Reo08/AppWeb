@@ -22,16 +22,12 @@ class EditandoModulo extends FormRequest
     public function rules(): array
     {
         return [
-            "nombre_modulo" => "max:200",
-            "video" => "mimetypes:video/mp4,video/mpeg/,video/quicktime|max:10485760",
             "desc_modulo" => "max:250"
         ];
     }
     public function attributes()
     {
         return [
-            "nombre_modulo" => "Nombre del modulo",
-            "video" => "Video",
             "desc_modulo" => "Descripcion del modulo"
         ];
     }

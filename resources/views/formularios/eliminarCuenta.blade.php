@@ -3,6 +3,7 @@
 @section('titulo', 'Cuentas')
 @section('cssJs')
     <link rel="stylesheet" href="/app-web/resources/css/cuentas.css">
+    <script src="/app-web/resources/js/eliminarCuenta.js" defer></script>
 @endsection
     
 @section('titulo-encabezado', 'Cuentas')
@@ -14,7 +15,7 @@
         <p>Aqui podra eliminar una cuenta de usuario.</p>
     </div>
     <div class="cont-form-eliminarCuenta">
-        <form action="{{route('eliminando-cuenta')}}" method="POST">
+        <form class="form-eliminarCuenta" action="{{route('eliminando-cuenta')}}" method="POST">
             @csrf
             @method('delete')
             <label for="">Correo</label>

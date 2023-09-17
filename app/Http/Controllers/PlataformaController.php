@@ -525,23 +525,28 @@ class PlataformaController extends Controller
             return redirect()->route('agregar-modulo', ['curso' => $buscarCurso[0]])->with('alert','El nombre del modulo ya existe y no puede haber un modulo con el mismo nombre.');
         }
 
-        if($request->hasFile('video')){
-            $path = "videosModulos/";
-
-            $nombre = Str::slug($request->file('video')->getClientOriginalName()).'.'.trim($request->file('video')->getClientOriginalExtension());
-            $request->video->storeAs($path,$nombre,'public');
+        if($request->url_youtube == null){
 
             $nuevoModulo =  new Modulos();
             $nuevoModulo->nombre_modulo = $request->nombre_modulo;
             $nuevoModulo->slug = Str::slug($request->nombre_modulo,'-');
-            $nuevoModulo->url_video = "/app-web/storage/app/public/".$path.$nombre;
             $nuevoModulo->desc_modulo = $request->desc_modulo;
             $nuevoModulo->id_cursos = $buscarCurso[0]->id_cursos;
             $nuevoModulo->save();
 
             return redirect()->route('curso',$curso)->with('alert', 'Modulo agregado');
-            
+        }else {
+            $nuevoModulo =  new Modulos();
+            $nuevoModulo->nombre_modulo = $request->nombre_modulo;
+            $nuevoModulo->slug = Str::slug($request->nombre_modulo,'-');
+            $nuevoModulo->url_youtube = $request->url_youtube;
+            $nuevoModulo->desc_modulo = $request->desc_modulo;
+            $nuevoModulo->id_cursos = $buscarCurso[0]->id_cursos;
+            $nuevoModulo->save();
+
+            return redirect()->route('curso',$curso)->with('alert', 'Modulo agregado');
         }
+
     }
     public function modulo($curso,$modulo){
         $buscarCurso = Cursos::where('slug', '=', $curso)->get();
@@ -567,31 +572,14 @@ class PlataformaController extends Controller
     }
     public function editandoModulo(EditandoModulo $request, $curso, $modulo){
         $buscarCurso = Cursos::where('slug','=',$curso)->get();
-        if($request->hasFile('video')){
-            $path = "videosModulos/";
 
-            $nombre = Str::slug($request->file('video')->getClientOriginalName()).'.'.trim($request->file('video')->getClientOriginalExtension());
-            $request->video->storeAs($path,$nombre, 'public');
+        $editandoModulo = Modulos::where('slug','=',$modulo)->where('id_cursos','=',$buscarCurso[0]->id_cursos)->get();
+        $editandoModulo[0]->url_youtube = $request->url_youtube;
+        $editandoModulo[0]->desc_modulo = $request->desc_modulo;
+        $editandoModulo[0]->update();
 
-            $editandoModulo = Modulos::where('slug','=',$modulo)->where('id_cursos','=',$buscarCurso[0]->id_cursos)->get();
-            $editandoModulo[0]->nombre_modulo = $request->nombre_modulo;
-            $editandoModulo[0]->slug = Str::slug($request->nombre_modulo,'-');
-            $editandoModulo[0]->url_video = "/app-web/storage/app/public/".$path.$nombre;
-            $editandoModulo[0]->desc_modulo = $request->desc_modulo;
-            $editandoModulo[0]->update();
+        return redirect()->route('curso',$curso)->with('alert','Modulo editado');
 
-
-            return redirect()->route('curso',$curso)->with('alert','Modulo editado');
-        }else {
-
-            $editandoModulo = Modulos::where('slug','=',$modulo)->where('id_cursos','=',$buscarCurso[0]->id_cursos)->get();
-            $editandoModulo[0]->nombre_modulo = $request->nombre_modulo;
-            $editandoModulo[0]->slug = Str::slug($request->nombre_modulo,'-');
-            $editandoModulo[0]->desc_modulo = $request->desc_modulo;
-            $editandoModulo[0]->update();
-
-            return redirect()->route('curso',$curso)->with('alert','Modulo editado');
-        }
     }
     public function eliminandoModulo($curso,$modulo){
         $buscarCurso = Cursos::where('slug','=',$curso)->get();

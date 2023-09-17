@@ -3,8 +3,8 @@
 @section('titulo', 'Editar Modulo')
 @section('cssJs')
     <link rel="stylesheet" href="/app-web/resources/css/agregarModulo.css">
-    <script src="/app-web/resources/js/agregarModulo.js" defer type="module"></script>
     <script src="/app-web/resources/js/vlidacionFormularios.js" defer type="module"></script>
+    <script src="/app-web/resources/js/editarModulo.js" defer type="module"></script>
 @endsection
     
 @section('titulo-encabezado', 'Modulo')
@@ -19,15 +19,9 @@
         <form class="form-agregarModulo" action="{{route('editando-modulo', ['curso'=> $buscarCurso[0],'modulo'=> $buscarModulo[0]])}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('put')
-            <label>Nombre del modulo</label>
-            <input type="text" name="nombre_modulo" value="{{$buscarModulo[0]->nombre_modulo}}" required title="Solo letras, numeros y un maximo de 100 caracteres" pattern="^[A-Za-z0-9\s]{1,70}$">
-            @error('nombre_modulo')
-                <small>*{{$message}}</small>
-            @enderror
-            <label for="">Video tutorial <small>(maximo 80MB)</small></label>
-            <input type="file" name="video" accept="video/*">
-            <small class="small none">El archivo es demasiado grande</small>
-            @error('video')
+            <label for="">Iframe del video de youtube</label>
+            <input type="text" name="url_youtube" value="{{$buscarModulo[0]->url_youtube}}">
+            @error('url_youtube')
                 <small>*{{$message}}</small>
             @enderror
             <label>Descripcion del modulo</label>
@@ -42,4 +36,5 @@
             </div>
         </form>
     </div>
+    @include('profesor.alerta.alerta')
 @endsection

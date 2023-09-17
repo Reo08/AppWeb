@@ -3,7 +3,6 @@
 @section('titulo', 'Agregar Modulo')
 @section('cssJs')
     <link rel="stylesheet" href="/app-web/resources/css/agregarModulo.css">
-    <script src="/app-web/resources/js/agregarModulo.js" defer type="module"></script>
     <script src="/app-web/resources/js/vlidacionFormularios.js" defer type="module"></script>
 @endsection
     
@@ -23,10 +22,9 @@
             @error('nombre_modulo')
                 <small>*{{$message}}</small>
             @enderror
-            <label for="">Video tutorial <small>(maximo 80MB)</small></label>
-            <input type="file" name="video" accept="video/*" required>
-            <small class="small none">El archivo es demasiado grande</small>
-            @error('video')
+            <label for="">Iframe del video de youtube</label>
+            <input type="text" name="url_youtube">
+            @error('url_youtube')
                 <small>*{{$message}}</small>
             @enderror
             <label>Descripcion del modulo</label>

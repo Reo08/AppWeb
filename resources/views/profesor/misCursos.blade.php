@@ -18,7 +18,7 @@
         @else
             <p>Todos los cursos en los que esta inscrito.</p>
         @endif
-        <input type="search" name="" id="">
+        <input type="search" name=""  placeholder="Nombre del curso">
     </div>
     {{-- Aqui irian todos los cursos agregados --}}
     <div class="todos-cursos">

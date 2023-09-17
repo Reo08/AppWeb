@@ -76,7 +76,7 @@ Route::middleware('auth')->group(function(){
     Route::get('area-personal/{curso}/agregar-modulo', [PlataformaController::class, 'agregarModulo'])->name('agregar-modulo');
     Route::post('agregando-modulo/{curso}', [PlataformaController::class, 'agregandoModulo'])->name('agregando-modulo');
     Route::get('area-personal/{curso}/{modulo}', [PlataformaController::class, 'modulo'])->name('modulo');
-    Route::get('area-personal/{curso}/{modulo}/editar', [PlataformaController::class, 'editarModulo'])->name('area-personal.editarModulo');
+    Route::get('{curso}/{modulo}/editar', [PlataformaController::class, 'editarModulo'])->name('area-personal.editarModulo');
     Route::put('editando-modulo/{curso}/{modulo}', [PlataformaController::class, 'editandoModulo'])->name('editando-modulo');
     Route::delete('eliminando-modulo/{curso}/{modulo}', [PlataformaController::class , 'eliminandoModulo'])->name('eliminando-modulo');
     Route::post('agregando-pdf-alumno/{curso}/{modulo}', [PlataformaController::class, 'agregandoPdfModulo'])->name('agregandoPdfModulo');

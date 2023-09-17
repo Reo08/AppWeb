@@ -15,7 +15,7 @@ return new class extends Migration
             $table->increments('id_modulos');
             $table->string('nombre_modulo')->nullable();
             $table->string('slug');
-            $table->string('url_video')->nullable();
+            $table->string('url_youtube', 700)->nullable();
             $table->string('desc_modulo')->nullable();
             $table->unsignedInteger('id_cursos')->nullable();
             $table->foreign('id_cursos')->references('id_cursos')->on('cursos')->onDelete('cascade');

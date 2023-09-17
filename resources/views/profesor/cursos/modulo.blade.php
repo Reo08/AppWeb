@@ -8,7 +8,11 @@
 @endsection
 
 @section('video')
-    <video src="{{$buscarModulo[0]->url_video}}" controls></video>
+    @if ($buscarModulo[0]->url_youtube == null)
+        
+    @else
+        {!! $buscarModulo[0]->url_youtube !!}
+    @endif
 @endsection
 
 @section('contenido')

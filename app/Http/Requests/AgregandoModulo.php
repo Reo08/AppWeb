@@ -23,7 +23,6 @@ class AgregandoModulo extends FormRequest
     {
         return [
             "nombre_modulo" => "required|max:250",
-            "video" => "required|mimetypes:video/mp4,video/mpeg/,video/quicktime|max:104857600",
             "desc_modulo" => "required|max:250"
         ];
     }
@@ -31,8 +30,13 @@ class AgregandoModulo extends FormRequest
     {
         return [
             "nombre_modulo" => "Nombre del modulo",
-            "video" => "Video tutorial",
             "desc_modulo" => "Descripcion del modulo"
+        ];
+    }
+    public function messages()
+    {
+        return [
+            "url_youtube.url" => "El campo debe ser una URL valida"
         ];
     }
 }

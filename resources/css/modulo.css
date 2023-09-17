@@ -51,8 +51,9 @@ main .cont-video {
 
 /* Aqui van los estilos ya del archivo modulo, los de arriba son de la plantilla del modulo */
 
-video {
+iframe {
     width: inherit;
+    height: 490px;
 }
 .cont-titulo-modulo, .cont-material-clase, .cont-descripcion {
     background-color: #fff;
