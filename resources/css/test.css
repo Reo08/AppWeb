@@ -82,3 +82,17 @@ form >div button:hover {
     background-color: #fff;
     color: darkblue;
 }
+
+@media screen and (max-width:735px){
+    .test-realizado {
+        width: 100%;
+        margin: 0px;
+        box-shadow: none;
+    }
+    .test-realizado p {
+        text-align: center;
+    }
+    .test-realizado h2 {
+        text-align: center;
+    }
+}

@@ -62,13 +62,14 @@
             <img src="/app-web/public/img/logo-blanco.png" alt="">
             <div>
                 <a href="">Ruta para facebook https</a>
-                <p>icono de facebook</p>
+                <img src="/app-web/storage/app/public/icons-redes/facebook.png" alt="">
                 <a href="">Ruta para youtube https</a>
-                <p>icono de youtube</p>
+                <img src="/app-web/storage/app/public/icons-redes/youtube.png" alt="">
             </div>
         </section>
         <section class="sec-copy">
             <p>Copyright © 2023. Todos los derechos reservados.</p>
+            {{-- <a href="https://www.flaticon.es/iconos-gratis/facebook" title="facebook iconos">Facebook iconos creados por Freepik - Flaticon</a> --}}
         </section>
     </footer>
 </body>

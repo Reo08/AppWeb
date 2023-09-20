@@ -28,7 +28,7 @@
                     @if (Auth::user()->admin == 1 || $cursos[0]->id_usuarios == Auth::user()->identificacion)
                         <p>id: {{$curso->id_cursos}}</p>
                     @endif
-                    <p>Descripcion: {{$curso->descripcion}}</p>
+                    <p class="descripcion-curso">Descripcion: {{$curso->descripcion}}</p>
                     <p>Profesor: {{$curso->nombre}}</p>
                 </div>
             </div>

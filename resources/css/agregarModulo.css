@@ -81,3 +81,12 @@
 small {
     color: red;
 }
+
+
+@media screen and (max-width:495px){
+    .form-agregarModulo{
+        width: 100%;
+        margin: 0px;
+        padding: 10px 20px;
+    }
+}

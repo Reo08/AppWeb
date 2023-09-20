@@ -4,6 +4,7 @@
 @section('cssJs')
     <link rel="stylesheet" href="/app-web/resources/css/curso.css">
     <script src="/app-web/resources/js/eliminarCurso.js" defer></script>
+    <script src="/app-web/resources/js/curso.js" defer></script>
 @endsection
     
 @section('titulo-encabezado', 'Curso')
@@ -13,7 +14,8 @@
     <div class="info-curso">
         <h2>{{$buscarCurso[0]->nombre_curso}}</h2>
         @if (Auth::user()->admin == 1 || $buscarCurso[0]->identificacion == Auth::user()->identificacion)
-            <p>Id: {{$buscarCurso[0]->id_cursos}}</p>
+            <p>ID: {{$buscarCurso[0]->id_cursos}}</p>
+            <p>Cantidad de alumnos: {{$cantidadAlumnos}}</p>
         @endif
         <p>Descripcion: {{$buscarCurso[0]->descripcion}}</p>
         @if (Auth::user()->admin == 1 || $buscarCurso[0]->identificacion == Auth::user()->identificacion)
@@ -54,5 +56,43 @@
             </a>
         @endif
     </div>
+    @if (Auth::user()->admin == 1 || $buscarCurso[0]->identificacion == Auth::user()->identificacion)
+    <div class="alumnos-inscritos">
+        <h2>Alumnos del curso</h2>
+        <div class="cont-buscar-alumno">
+            <input type="search" name="buscarAluumno" class="buscarAlumno">
+            <div>
+                <label for="filtrar_nombre">
+                    <input type="radio" name="filtro" id="filtrar_nombre" checked value="nombre"> filtrar por nombre
+                </label>
+                <label for="filtrar_id">
+                    <input type="radio" name="filtro" id="filtrar_id" value="identificacion"> filtrar por identificacion
+                </label>
+            </div>
+        </div>
+        <div class="tabla-alumnos">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Identificacion</th>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($inscripciones as $inscripcion)
+                        <tr class="fila">
+                            <td class="fila-id">{{$inscripcion->identificacion}}</td>
+                            <td class="fila-nombre">{{$inscripcion->nombre_alumno}}</td>
+                            <td>{{$inscripcion->correo}}</td>
+                            <td>{{$inscripcion->estado == 1 ? "Activo": "Terminado"}}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+    @endif
     @include('profesor.alerta.alerta')
 @endsection

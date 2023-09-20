@@ -18,7 +18,7 @@
         <form class="form-crearCurso" action="{{route('creando-curso')}}" method="POST">
             @csrf
             <label>Nombre del curso</label>
-            <input type="text" name="nombre_curso" value="{{old('nombre_curso')}}" required title="Solo letras, numeros y un maximo de 100 caracteres" pattern="^[a-zA-Z0-9\s]{1,100}$">
+            <input type="text" name="nombre_curso" value="{{old('nombre_curso')}}" required title="Solo letras, numeros y un maximo de 100 caracteres" pattern="^.{0,100}$">
             @error('nombre_curso')
                 <small>*{{$message}}</small>
             @enderror

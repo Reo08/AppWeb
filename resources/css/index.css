@@ -66,14 +66,14 @@ header {
 .nombre-aplicativo h1 {
     font-size: 45px;
     color: #fff;
-
+    text-align: center;
 }
 .sec-form {
     height: 550px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/app-web/storage/app/public/fondo/Paisaje_rural.jpg');
+    background-image: url('/app-web/storage/app/public/fondo/paisaje_2.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -84,6 +84,7 @@ header {
     height: auto;
     display: flex;
     flex-direction: column;
+    padding: 0px 12px;
 }
 /* Aqui siguen los estilos del ul que aparece si hay error */
 .sec-form form ul {
@@ -136,7 +137,7 @@ header {
     background-color: #fff;
 }
 .sec-contacto {
-    height: 220px;
+    height: auto;
     background-color: #151515;
     color: #fff;
     border-bottom: .5px solid #ebebeb;
@@ -168,6 +169,14 @@ header {
 }
 .sec-social div {
     height: 150px;
+    display: flex;
+    flex-direction: column;
+}
+.sec-social div img {
+    width: 25px;
+    filter: invert(100%);
+    align-self: center;
+    margin-bottom: 10px;
 }
 .sec-social div a {
     font-size: 18px;
@@ -182,5 +191,25 @@ header {
 }
 .sec-copy p {
     color: #fff;
-    
+    text-align: center;
+}
+@media screen and (max-width: 770px){
+    .sec-contacto {
+        grid-template-columns: repeat(auto-fit,minmax(360px, 1fr));
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .cont-logo {
+        border-right: none;
+    }
+    .sec-social {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sec-social div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }

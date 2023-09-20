@@ -30,6 +30,7 @@ use App\Models\PreguntasTest;
 use App\Models\RespuestasTest;
 use App\Models\Test;
 use App\Models\User;
+use App\Models\Usuarios;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
@@ -376,6 +377,9 @@ class PlataformaController extends Controller
 
         $buscarTest = Test::where('id_cursos','=', $buscarCurso[0]->id_cursos)->get();
 
+        $inscripciones = Inscripciones::leftjoin('usuarios', 'inscripciones.identificacion', '=', 'usuarios.identificacion')->select('inscripciones.*','usuarios.nombre as nombre_alumno','usuarios.correo')->where('id_cursos','=', $buscarCurso[0]->id_cursos)->get();
+
+        $cantidadAlumnos = count($inscripciones);
 
         $buscarModulos = Modulos::where('id_cursos','=',$buscarCurso[0]->id_cursos)->get();
 
@@ -387,7 +391,7 @@ class PlataformaController extends Controller
             
         }
 
-        return view('profesor.cursos.curso',compact('buscarCurso','buscarModulos','buscarTest','inscripcionAlumno'));
+        return view('profesor.cursos.curso',compact('buscarCurso','buscarModulos','buscarTest','inscripcionAlumno', 'inscripciones','cantidadAlumnos'));
     }
     public function editarCurso($curso){
         $buscarCurso = Cursos::where('slug', '=',$curso)->get();

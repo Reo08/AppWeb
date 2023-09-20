@@ -33,7 +33,7 @@
                         @if (Auth::user()->admin == 1 || $cursos[0]->identificacion == Auth::user()->identificacion)
                             <p>Id: {{$curso->id_cursos}}</p>
                         @endif
-                        <p>Descripcion: {{$curso->descripcion}}</p>
+                        <p class="descripcion-curso">Descripcion: {{$curso->descripcion}}</p>
                         <p>Profesor: {{Auth::user()->nombre}}</p>
                     </div>
                 </div>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="cursoCard-info">
                         <h3>{{$cursoAlumno->nombre_curso}}</h3>
-                        <p>Descripcion: {{$cursoAlumno->descripcion}}</p>
+                        <p class="descripcion-curso">Descripcion: {{$cursoAlumno->descripcion}}</p>
                         <p>Profesor: {{$cursoAlumno->nombre}}</p>
                         <p>Estado: {{$cursoAlumno->estado == 1?'Activo':'Terminado'}}</p>
                     </div>

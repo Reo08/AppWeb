@@ -23,6 +23,9 @@
 .cont-notas ul li a h3 {
     font-weight: 400;
 }
+.cont-notas ul li a p {
+
+}
 .cont-info-notas, .cont-desc {
     margin-bottom: 25px;
 }
@@ -30,6 +33,29 @@
     font-size: 30px;
 }
 
+@media screen and (max-width: 1000px){
+    .cont-notas ul li{
+        height: auto;
+        padding-bottom: 10px;
+    }
+}
+
+@media screen and (max-width:500px){
+    .cont-notas ul li a p{
+        width: 45px;
+    }
+    .cont-notas ul li a h3{
+        width: 312px;
+    }
+}
+@media screen and (max-width:375px){
+    .cont-notas ul li a p{
+        width: 45px;
+    }
+    .cont-notas ul li a h3{
+        width: 190px;
+    }
+}
 
 /* Aqui va los estilos de notaDeCurso */
 
@@ -56,7 +82,7 @@
 }
 
 .cont-tabla {
-    width: 680px;
+    width: 800px;
     height: 230px;
     margin: 0px auto;
     margin-top: 30px;
@@ -64,11 +90,39 @@
     position: relative;
     box-shadow: 0px 4px 8px 3px #616161;
 }
+/* Estlos del scroll */
+.cont-tabla::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.cont-tabla::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.cont-tabla::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.cont-tabla::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.cont-tabla::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.cont-tabla::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+/* Fin de estilos de scroll */
 .cont-tabla table thead{
     position: sticky;
     top: 0px;
 }
-
+.cont-tabla table {
+    width: 785px;
+}
 
 .cont-tabla table th, .cont-tabla table td {
     background-color: #e0e0e0;
@@ -80,7 +134,7 @@
     width: 185px;
 }
 .cont-tabla table th:nth-child(2){
-    width: 420px;
+    width: 540px;
 }
 .cont-tabla table th:nth-child(3){
     width: 50px;
@@ -155,3 +209,45 @@
 .filtrar {
     display: none;
 }
+
+@media screen and (max-width:939px){
+    .cont-tabla{
+        width: auto;
+        overflow-x: scroll;
+    }
+}
+@media screen and (max-width:725px){
+    .notaVacia{
+        width: 100%;
+        margin: 0px;
+        box-shadow: none;
+    }
+    .notaVacia h2{
+        text-align: center;
+    }
+    .notaVacia p{
+        text-align: center;
+    }
+}
+@media screen and (max-width:676px){
+    .cont-buscarNota > input {
+        width: 100%;
+    }
+}
+@media screen and (max-width:516px){
+    .cont-notas-alumno{
+        padding: 20px 20px 25px 20px;
+    }
+    .cont-buscarNota > div{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+
+

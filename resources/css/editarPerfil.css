@@ -64,3 +64,16 @@
     width: 115px;
     height: 38px;
 }
+
+
+@media screen and (max-width:542px){
+    .cont-form-editarPerfil form{
+        width: auto;
+    }
+}
+
+@media screen and (max-width:400px){
+    .cont-form-editarPerfil form{
+        padding: 0px;
+    }
+}

@@ -73,3 +73,13 @@
 small {
     color: red;
 }
+
+@media screen and (max-width: 450px){
+    .cont-form-cambiar-contrasena{
+        padding: 0px 10px 0px 10px;
+    }
+    .cont-form-cambiar-contrasena form{
+        width: 100%;
+        margin: 0px;
+    }
+}

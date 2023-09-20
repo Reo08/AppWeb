@@ -1,7 +1,7 @@
 .cont-desc {
     background-color: #fff;
-    height: 70px;
-    padding: 17px 17px 0px 26px;
+    height: auto;
+    padding: 17px 17px 17px 17px;
     margin-bottom: 20px;
 }
 .cont-configuraciones {

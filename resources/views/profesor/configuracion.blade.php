@@ -18,7 +18,7 @@
         <ul>
             <li><a href="{{route('area-personal.perfil')}}">Editar perfil</a></li>
             <li> <a href="{{route('cambiar-contrasena')}}">Cambiar contraseña</a></li>
-            <li><a class="eliminar-cuenta" href="{{route('eliminando-cuenta-propia')}}">Eliminar cuenta</a></li>
+            <li><a class="eliminar-cuenta" href="{{route('eliminando-cuenta-propia')}}">Eliminar mi cuenta</a></li>
         </ul>
     </div>
     @include('profesor.alerta.alerta')

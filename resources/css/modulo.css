@@ -9,7 +9,6 @@ main > div {
 }
 main .cont-video {
     width: 100%;
-    padding: 0px;
 }
 .nav-modulos {
     height: 78px;
@@ -53,7 +52,7 @@ main .cont-video {
 
 iframe {
     width: inherit;
-    height: 490px;
+    height: 80vh;
 }
 .cont-titulo-modulo, .cont-material-clase, .cont-descripcion {
     background-color: #fff;
@@ -162,7 +161,7 @@ iframe {
 .ventana-flotante{
     position:absolute;
     top: 0px;
-    left: 2px;
+    left: 273px;
     right: 0px;
     bottom: 0px;
     transform: translate(0px, -1283px);
@@ -245,4 +244,30 @@ iframe {
 }
 .small {
     color: red;
+}
+
+
+
+@media screen and (max-width:1160px) {
+    .ventana-flotante{
+        left: 0px;
+    }
+}
+@media screen and (max-width:632px){
+    .cont-material-clase table{
+        width: 100%;
+    }
+}
+@media screen and (max-width:456px){
+    .cont-material-clase table{
+        width: 100%;
+    }
+    .cont-material-clase table button{
+        width: 48px;
+    }
+}
+@media screen and (max-width:415px){
+    .ventana-flotante form {
+        width: 97%;
+    }
 }

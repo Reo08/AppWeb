@@ -1,8 +1,8 @@
 .cont-desc {
     background-color: #fff;
-    height: 100px;
+    height: auto;
     margin-bottom: 20px;
-    padding: 17px 17px 0px 26px;
+    padding: 17px 17px 17px 26px;
     /* border-bottom: 1px solid rgb(166, 166, 166); */
 }
 .cont-desc h2 {
@@ -98,6 +98,17 @@
     color: darkblue;
 }
 
+@media screen and (max-width: 527px){
+    .cont-form-crearCurso{
+        padding: 0px 15px 0px 15px;
+    }
+    .form-crearCurso{
+        width: 100%;
+        padding: 0px;
+    }
+}
+
+
 /* Aqui estan los estilos de la pagina de vincular profesor */
 
 .form-vincularProfesor {
@@ -117,6 +128,18 @@
     background-color: #fff;
     padding: 20px 30px 0px 30px;
 }
+
+@media screen and (max-width: 555px){
+    .cont-form-vincularProfesor{
+        padding: 20px 15px 0px 15px;
+    }
+    .form-vincularProfesor{
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
 
 /* Aqui estan los estilos de desvincular profesor */
 /* Los estilos de desvincular profesor son los mismos de vincular profesor */

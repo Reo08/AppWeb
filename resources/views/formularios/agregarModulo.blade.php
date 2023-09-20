@@ -18,7 +18,7 @@
         <form class="form-agregarModulo" action="{{route('agregando-modulo',$curso)}}" method="POST" enctype="multipart/form-data">
             @csrf
             <label>Nombre del modulo</label>
-            <input type="text" name="nombre_modulo"  required title="Solo letras, numeros y un maximo de 70 caracteres" pattern="^[A-Za-z0-9\s]{1,70}$" value={{old('nombre_modulo')}}>
+            <input type="text" name="nombre_modulo"  required title="Solo letras, numeros y un maximo de 70 caracteres" pattern="^.{0,70}$" value={{old('nombre_modulo')}}>
             @error('nombre_modulo')
                 <small>*{{$message}}</small>
             @enderror
@@ -28,7 +28,7 @@
                 <small>*{{$message}}</small>
             @enderror
             <label>Descripcion del modulo</label>
-            <textarea name="desc_modulo" cols="30" rows="10" required title="Maximo 255 caracteres" data-pattern="[\w\s\d!@#$%^&*()_+{}\[\]:;<>,.?~\\-]{1,255}">{{old('desc_modulo')}}</textarea>
+            <textarea name="desc_modulo" cols="30" rows="10" required title="Maximo 255 caracteres" data-pattern="^.{0,255}$">{{old('desc_modulo')}}</textarea>
             <small class="smallArea none">Maximo 255 caracteres</small>
             @error('desc_modulo')
                 <small>*{{$message}}</small>

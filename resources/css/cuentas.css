@@ -1,8 +1,8 @@
 .cont-desc {
     background-color: #fff;
-    height: 100px;
+    height: auto;
     margin-bottom: 20px;
-    padding: 17px 17px 0px 26px;
+    padding: 17px 17px 17px 26px;
     /* border-bottom: 1px solid rgb(166, 166, 166); */
 }
 .cont-desc h2 {
@@ -87,6 +87,18 @@
     border-radius: 5px;
 }
 
+
+@media screen and (max-width: 544px){
+    .cont-form-aggProfe{
+        padding: 20px 15px 0px 15px;
+    }
+    .cont-form-aggProfe form{
+        width: 100%;
+        padding: 0px 1px;
+    }
+}
+
+
 /* Aqui estan los estilos de Agregar Alumno */
 .cont-form-aggAlumno {
     height: 460px;
@@ -143,6 +155,17 @@
     color: #fff;
     padding: 8px 25px;
     border-radius: 5px;
+}
+
+
+@media screen and (max-width: 544px){
+    .cont-form-aggAlumno{
+        padding: 20px 15px 0px 15px;
+    }
+    .cont-form-aggAlumno form{
+        width: 100%;
+        padding: 0px 1px;
+    }
 }
 /* Aqui estan los estilos de eliminar cuenta */
 
@@ -205,4 +228,14 @@
 
 small {
     color: red;
+}
+
+@media screen and (max-width: 540px){
+    .cont-form-eliminarCuenta{
+        padding: 20px 15px 0px 15px;
+    }
+    .cont-form-eliminarCuenta form{
+        width: 100%;
+        padding: 0px 1px;
+    }
 }

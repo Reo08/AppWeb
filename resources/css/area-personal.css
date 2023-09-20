@@ -20,6 +20,32 @@
     height: 553px;
     overflow-y: scroll;
 }
+/* Estlos del scroll */
+.todos-cursos::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.todos-cursos::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.todos-cursos::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.todos-cursos::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.todos-cursos::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.todos-cursos::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+/* Fin de estilos de scroll */
 .cursoCard {
     border: 1px solid rgb(166, 166, 166);
     background-color: #fff;
@@ -70,4 +96,47 @@
 
 .filtro {
     display: none;
+}
+@media screen and (max-width:1050px){
+    .descripcion-curso{
+        display: none;
+    }
+}
+
+@media screen and (max-width:780px){
+    .buscar-curso{
+        padding-right: 26px;
+    }
+    .buscar-curso input {
+        width: 100%;
+    }
+    .cursoCard {
+        height: 192px;
+    }
+    .cursoCard-info {
+        width: 540px;
+    }
+    .cursoCard-img, .cursoCard-img1 {
+        height: 160px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .cursoCard {
+        height: 270px;
+        flex-direction: column;
+    }
+    .cursoCard-img, .cursoCard-img1 {
+        width: 100%;
+        height: 100px;
+    }
+    .cursoCard-info{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:414px){
+    .cursoCard {
+        height: 300px;
+    }
 }

@@ -51,7 +51,6 @@ main {
 .main-cont-datos {
     height: 577px;
     padding-top: 150px;
-    border-bottom: 1px solid gray;
     display: flex;
     justify-content: center;
 }
@@ -86,11 +85,11 @@ main {
     background-color: #fff;
 }
 .ventana-flotante {
+    width: 78%;
     position:absolute;
-    top: 82px;
-    left: 219px;
+    top: 0px;
     right: 0px;
-    bottom: -401px;
+    bottom: 0px;
     transform: translate(0px, -736px);
     transition: transform .5s ease;
 }
@@ -143,4 +142,34 @@ main {
 /* script para ventana flotante */
 .bajar {
     transform: translate(0px, 0px);
+}
+
+
+@media screen and (max-width: 1160px){
+    .ventana-flotante {
+        width: 100%;
+    }
+}
+@media screen and (max-width:796px){
+    .main-cont-datos {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .main-cont-datos > div {
+        width: 100%;
+    }
+}
+@media screen and (max-width:411px){
+    .main-cont-color {
+        padding-top: 80px;
+    }
+    .main-cont-color h1 {
+        text-align: center;
+    }
+    .main-cont-datos > div {
+        height: 420px;
+    }
+    .ventana-flotante form{
+        width: 96%;
+    }
 }
