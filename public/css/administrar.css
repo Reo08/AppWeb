@@ -1,0 +1,155 @@
+.cont-desc {
+    background-color: #fff;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 17px 17px 17px 26px;
+    /* border-bottom: 1px solid rgb(166, 166, 166); */
+}
+.cont-desc h2 {
+    font-size: 30px;
+}
+.cont-a-vinculos {
+    /* Aqui hay un cambio en el height y padding */
+    height: auto; 
+    background-color: #fff;
+    padding: 20px 30px 40px 30px;
+}
+.cont-a-vinculos ul li {
+    height: 60px;
+    border-bottom: 1px solid rgb(166, 166, 166);
+    display: flex;
+    align-items: center;
+}
+.cont-a-vinculos ul li a {
+    text-decoration: none;
+    color: #000;
+}
+.cont-a-vinculos ul li a:hover {
+    color: blue;
+    text-decoration:underline;
+}
+
+/* Aqui esta el formulario crear curso */
+.cont-form-crearCurso{
+    height: auto;
+    background-color: #fff;
+    padding: 20px 30px 0px 30px;
+}
+
+
+.form-crearCurso {
+    width: 400px;
+    height: auto;
+    margin: 0px auto;
+    padding: 0px 25px 10px 25px;
+    display: flex;
+    flex-direction: column;
+}
+.form-crearCurso label, .form-vincularProfesor label {
+    margin-top: 20px;
+
+}
+.form-crearCurso input, .form-vincularProfesor input {
+    height: 47px;
+    padding-left: 15px;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.form-crearCurso textarea {
+    resize: none;
+    border: 1px solid #000;
+    border-radius: 5px;
+    outline: none;
+    padding: 10px;
+}
+.form-crearCurso div, .form-vincularProfesor div {
+    margin-bottom: 25px;
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-crearCurso div a, .form-vincularProfesor div a {
+    background-color: gray;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 5px;
+}
+.form-crearCurso div button, .form-vincularProfesor div button {
+    font-size: 15px;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    padding: 9px 25px;
+    margin-right: 13px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+
+.form-crearCurso div button:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+
+@media screen and (max-width: 527px){
+    .cont-form-crearCurso{
+        padding: 0px 15px 0px 15px;
+    }
+    .form-crearCurso{
+        width: 100%;
+        padding: 0px;
+    }
+}
+
+
+/* Aqui estan los estilos de la pagina de vincular profesor */
+
+.form-vincularProfesor {
+    width: 400px;
+    height: 300px;
+    margin: 0px auto;
+    padding: 0px 25px 10px 25px;
+    display: flex;
+    flex-direction: column;
+}
+.form-vincularProfesor div button:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+.cont-form-vincularProfesor{
+    height: 323px;
+    background-color: #fff;
+    padding: 20px 30px 0px 30px;
+}
+
+@media screen and (max-width: 555px){
+    .cont-form-vincularProfesor{
+        padding: 20px 15px 0px 15px;
+    }
+    .form-vincularProfesor{
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+
+/* Aqui estan los estilos de desvincular profesor */
+/* Los estilos de desvincular profesor son los mismos de vincular profesor */
+
+
+small {
+    color: red;
+}
+
+/* script */
+.none {
+    display: none;
+}

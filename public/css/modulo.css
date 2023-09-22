@@ -1,0 +1,273 @@
+main {
+    padding: 0px;
+}
+main > div:first-child {
+    padding-top: 30px;
+}
+main > div {
+    padding: 0px 26px;
+}
+main .cont-video {
+    width: 100%;
+}
+.nav-modulos {
+    height: 78px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #fff;
+    padding-left: 13px;
+    overflow-x: auto;
+}
+.nav-modulos li {
+    width: 117px;
+    height: 44px; 
+    margin-right: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-modulos a {
+    text-decoration: none;
+    font-size: 15px;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-modulos a:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+
+/* Aqui van los estilos ya del archivo modulo, los de arriba son de la plantilla del modulo */
+
+iframe {
+    width: inherit;
+    height: 80vh;
+}
+.cont-titulo-modulo, .cont-material-clase, .cont-descripcion {
+    background-color: #fff;
+    height: auto;
+    padding: 15px;
+    margin-top: 20px;
+}
+.cont-titulo-modulo div {
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.cont-titulo-modulo div a{
+    width: 145px;
+    height: 35px; 
+    margin-right: 8px;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    text-decoration: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .5s ease;
+}
+.cont-titulo-modulo div a:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+.cont-titulo-modulo div button {
+    color: #fff;
+    background-color: gray;
+    width: 150px;
+    height: 35px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Estilos de la tabla de material de clase */
+.cont-material-clase table {
+    background-color: darkblue;
+    margin-top: 18px;
+    width: 550px;
+    height: auto;
+    border-radius: 5px;
+}
+.cont-material-clase table th:first-child {
+    border-top-left-radius: 5px;
+}
+.cont-material-clase table th:last-child {
+    border-top-right-radius: 5px;
+}
+.cont-material-clase table th {
+    background-color: #fff;
+}
+.cont-material-clase table td {
+    background-color: #fff;  
+} 
+.cont-material-clase table tbody .td-button {
+    text-align: center;
+    padding: 3px 0px;
+}
+.cont-material-clase table tbody .td-nombrePdf {
+    padding-left: 5px;
+}
+/* Fin de los estilos de la tabla */
+
+.cont-material-clase table button {
+    width: 80px;
+    height: 30px;
+    background-color: red;
+    color: #fff;
+    border: 1px solid red;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color .2s ease;
+    cursor: pointer;
+}
+.cont-material-clase table button:hover {
+    background-color: rgb(255, 79, 79);
+}
+.cont-material-clase > a {
+    width: 145px;
+    height: 35px;
+    margin-top: 20px;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    text-decoration: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color .5s ease;
+}
+.cont-material-clase a:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+
+/* La ventana flotante */
+.ventana-flotante{
+    position:absolute;
+    top: 0px;
+    left: 273px;
+    right: 0px;
+    bottom: 0px;
+    transform: translate(0px, -1283px);
+    transition: transform .5s ease;
+}
+.ventana-flotante form {
+    position:  sticky;
+    top: 110px;
+    margin: 0px auto;
+    width: 400px;
+    height: 160px;
+    padding: 18px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 3px 5px 1px black;
+}
+.ventana-flotante form div {
+    height: 40px;
+    margin-top: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ventana-flotante form div a{
+    background-color: gray;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 5px;
+}
+.ventana-flotante form div button {
+    font-size: 15px;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    padding: 9px 25px;
+    margin-right: 13px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+.ventana-flotante form div button:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+
+/* Estilos de la vista del alumno en el modulo */
+
+.cont-material-clase > div {
+    border: 1px solid #7a7a7a;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.cont-material-clase > div a {
+    color: darkblue;
+    text-decoration: none;
+}
+.cont-material-clase > div a:hover {
+    text-decoration: underline;
+    color: rgb(44, 44, 255);
+} 
+
+
+/* script */
+.bajar {
+    transform: translate(0px, 0px);
+}
+
+.nav-modulos .modulo-seleccionado {
+    background-color: #fff;
+    color: darkblue;
+}
+.none {
+    display: none;
+}
+.small {
+    color: red;
+}
+
+
+
+@media screen and (max-width:1160px) {
+    .ventana-flotante{
+        left: 0px;
+    }
+}
+@media screen and (max-width:632px){
+    .cont-material-clase table{
+        width: 100%;
+    }
+}
+@media screen and (max-width:456px){
+    .cont-material-clase table{
+        width: 100%;
+    }
+    .cont-material-clase table button{
+        width: 48px;
+    }
+}
+@media screen and (max-width:415px){
+    .ventana-flotante form {
+        width: 97%;
+    }
+}

@@ -16,7 +16,7 @@
 <body>
     <header>
         <div class="cont-logo">
-            <a href="#"><img src="/app-web/public/img/ESCUDO-COLOR-H.png" alt=""></a>
+            <a href="#"><img src="{{asset('/app-web/public/img/ESCUDO-COLOR-H.png')}}" alt=""></a>
         </div>
         <div class="cont-ingresar">
             <a href="#ingresar"><span class="material-symbols-outlined">person</span> Ingresar</a>

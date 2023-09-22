@@ -1,0 +1,175 @@
+main {
+    padding: 0px;
+}
+.main-cont-color {
+    height: 300px;
+    background: linear-gradient(90deg, rgba(253,187,45,1) 0%, rgba(34,193,195,1) 77%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 110px;
+    position: relative;
+}
+.main-cont-color h1 {
+    font-size: 40px;
+    color: #fff;
+}
+.cont-img-perfil {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    background-color: rgba(128, 128, 128, 0.742);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -87px;
+}
+.cont-img-perfil img {
+    width: 180px;
+}
+.btn-edit-img {
+    width: 45px;
+    height: 45px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -106px;
+    cursor: pointer;
+    border: 1px solid gray;
+    box-shadow: 0px 0px 4px 1px gray;
+    transition: background-color .5s ease;
+}
+.btn-edit-img:hover {
+    background-color: gray;
+}
+
+.main-cont-datos {
+    height: 577px;
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+}
+.main-cont-datos > div {
+    width: 750px;
+    height: 380px;
+    padding: 20px;
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 15% 13% 13% 13% 13% 17% 13%;
+}
+.main-cont-datos div h2 {
+    grid-area: 1/1/2/3;
+}
+.main-cont-datos > div > div {
+    grid-area: 7/1/8/3;
+    display: flex;
+    justify-content: center;
+}
+.main-cont-datos div a {
+    padding: 10px 50px;
+    color: #fff;
+    text-decoration: none;
+    background-color: darkblue;
+    border-radius: 5px ;
+    border: 1px solid darkblue;
+    transition: background-color .5s ease;
+}
+.main-cont-datos div a:hover {
+    color: darkblue;
+    background-color: #fff;
+}
+.ventana-flotante {
+    width: 78%;
+    position:absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    transform: translate(0px, -736px);
+    transition: transform .5s ease;
+}
+.ventana-flotante form {
+    position:  sticky;
+    top: 110px;
+    margin: 0px auto;
+    width: 400px;
+    height: 160px;
+    padding: 18px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 6px 1px #000;
+}
+.ventana-flotante form div {
+    height: 40px;
+    margin-top: 27px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ventana-flotante form div a{
+    background-color: gray;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 5px;
+}
+.ventana-flotante form div button {
+    font-size: 15px;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    padding: 9px 25px;
+    margin-right: 13px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+.ventana-flotante form div button:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+
+
+
+
+/* script para ventana flotante */
+.bajar {
+    transform: translate(0px, 0px);
+}
+
+
+@media screen and (max-width: 1160px){
+    .ventana-flotante {
+        width: 100%;
+    }
+}
+@media screen and (max-width:796px){
+    .main-cont-datos {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .main-cont-datos > div {
+        width: 100%;
+    }
+}
+@media screen and (max-width:411px){
+    .main-cont-color {
+        padding-top: 80px;
+    }
+    .main-cont-color h1 {
+        text-align: center;
+    }
+    .main-cont-datos > div {
+        height: 420px;
+    }
+    .ventana-flotante form{
+        width: 96%;
+    }
+}

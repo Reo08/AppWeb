@@ -1,0 +1,142 @@
+.buscar-curso {
+    background-color: #fff;
+    height: 165px;
+    padding: 17px 17px 0px 26px;
+}
+.buscar-curso h2 {
+    font-size: 30px;
+}
+.buscar-curso input {
+    width: 500px;
+    height: 47px;
+    margin-top: 10px;
+    padding-left: 15px;
+    outline: none;
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 17px;
+}
+.todos-cursos {
+    height: 553px;
+    overflow-y: scroll;
+}
+/* Estlos del scroll */
+.todos-cursos::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.todos-cursos::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.todos-cursos::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.todos-cursos::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.todos-cursos::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.todos-cursos::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+/* Fin de estilos de scroll */
+.cursoCard {
+    border: 1px solid rgb(166, 166, 166);
+    background-color: #fff;
+    height: 200px;
+    display: flex;
+    padding: 15px;
+}
+.cursoCard-img {
+    border: 1px solid blue;
+    width: 190px;
+    height: 160px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/app-web/public/img/cursoCard1.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.cursoCard-img a, .cursoCard-img1 a  {
+    text-decoration: none;
+    padding: 6px 25px;
+    border-radius: 18px;
+    border: 2px solid rgb(255, 255, 255);
+    font-weight: bold;
+    color: #fff;
+}
+.cursoCard-info {
+    width: 790px;
+}
+
+.cursoCard-img1 {
+    border: 1px solid blue;
+    width: 190px;
+    height: 160px;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/app-web/public/img/cursoCard2.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Script para filtrar cursos */
+
+.filtro {
+    display: none;
+}
+@media screen and (max-width:1050px){
+    .descripcion-curso{
+        display: none;
+    }
+}
+
+@media screen and (max-width:780px){
+    .buscar-curso{
+        padding-right: 26px;
+    }
+    .buscar-curso input {
+        width: 100%;
+    }
+    .cursoCard {
+        height: 192px;
+    }
+    .cursoCard-info {
+        width: 540px;
+    }
+    .cursoCard-img, .cursoCard-img1 {
+        height: 160px;
+    }
+}
+
+@media screen and (max-width:600px){
+    .cursoCard {
+        height: 270px;
+        flex-direction: column;
+    }
+    .cursoCard-img, .cursoCard-img1 {
+        width: 100%;
+        height: 100px;
+    }
+    .cursoCard-info{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:414px){
+    .cursoCard {
+        height: 300px;
+    }
+}

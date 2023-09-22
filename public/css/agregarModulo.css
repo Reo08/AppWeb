@@ -1,0 +1,92 @@
+.cont-desc {
+    height: auto;
+    padding: 18px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+.cont-form-agregarModulo {
+    height: auto;
+    background-color: #fff;
+}
+.form-agregarModulo {
+    width: 350px;
+    height: auto;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+}
+.form-agregarModulo input[name="nombre_modulo"], .form-agregarModulo input[name="url_youtube"] {
+    height: 47px;
+    padding-left: 15px;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.form-agregarModulo label {
+    margin-top: 20px;
+}
+.form-agregarModulo textarea {
+    resize: none;
+    border: 1px solid #000;
+    border-radius: 5px;
+    outline: none;
+    padding: 10px;
+}
+.form-agregarModulo div {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 28px;
+    margin-bottom: 25px;
+}
+.form-agregarModulo div button {
+    width: 100px;
+    height: 39px;
+    font-size: 15px;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    margin-right: 13px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+.form-agregarModulo div button:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+.form-agregarModulo div a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 39px;
+    background-color: gray;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* script */
+.none {
+    display: none;
+}
+.small, .smallArea {
+    color: red;
+}
+small {
+    color: red;
+}
+
+
+@media screen and (max-width:495px){
+    .form-agregarModulo{
+        width: 100%;
+        margin: 0px;
+        padding: 10px 20px;
+    }
+}

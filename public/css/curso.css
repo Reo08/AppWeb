@@ -1,0 +1,360 @@
+.info-curso, .info-test {
+    background-color: #fff;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 17px 26px 17px 26px;
+}
+.info-curso div {
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+.info-curso div a{
+    width: 112px;
+    height: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    margin-right: 13px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+.info-curso div a:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+.info-curso div button {
+    width: 162px;
+    height: 33px;
+    background-color: gray;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid gray;
+}
+
+
+
+.modulos-de-curso, .cont-form-test {
+    height: auto;
+    background-color: #fff;
+    padding: 20px 30px 20px 30px;
+}
+.modulos-de-curso > div {
+    height: auto;
+    border-bottom: 1px solid rgb(182, 181, 181);
+} 
+.modulos-de-curso > div h2 {
+    margin-bottom: 10px;
+}
+.modulos-de-curso > div a {
+    margin-bottom: 17px;
+    font-size: 16px;
+    display: inline-block;
+    text-decoration: none;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    padding: 6px 25px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+.modulos-de-curso > div a:first-child {
+    margin-right: 8px;
+}
+.modulos-de-curso > div a:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+.modulos-de-curso .modulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid rgb(182, 181, 181);
+    height: 30px;
+    text-decoration: none;
+    color: #000;
+}
+.modulos-de-curso .modulo:hover {
+    color: blue;
+}
+.alumnos-inscritos {
+    height: auto;
+    background-color: #fff;
+    padding: 20px 30px 20px 30px;
+    margin-top: 20px;
+    position: relative;
+}
+.alumnos-inscritos h2 {
+    margin-bottom: 10px;
+}
+
+.cont-buscar-alumno {
+    margin-top: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cont-buscar-alumno input[type="search"] {
+    width: 500px;
+    height: 47px;
+    margin-top: 10px;
+    padding-left: 15px;
+    outline: none;
+    background-color: #fff;
+    border-radius: 5px;
+    font-size: 17px;
+}
+.cont-buscar-alumno >div {
+    margin-top: 15px;
+}
+.alumnos-inscritos .tabla-alumnos {
+    height: 200px;
+    margin-top: 20px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+.alumnos-inscritos table {
+    width: 936px;
+    margin: 0px auto;
+}
+.alumnos-inscritos table thead {
+    position: sticky;
+    top: 0px;
+}
+.alumnos-inscritos table th{
+    background-color: #adadad;
+}
+.alumnos-inscritos table td {
+    background-color: #e6e6e6;
+}
+.alumnos-inscritos table th:nth-child(1){
+    width: 125px;
+}
+.alumnos-inscritos table th:nth-child(2){
+    width: 540px;
+}
+.alumnos-inscritos table th:nth-child(3){
+    width: 400px;
+}
+.alumnos-inscritos table th:nth-child(4){
+    width: 72px;
+}
+
+/* script */
+.filtrar {
+    display: none;
+}
+/* fin script */
+
+@media screen and (max-width:900px){
+    .modulos-de-curso .modulo {
+        height: auto;
+        padding-bottom: 10px;
+    }
+    .modulos-de-curso .modulo p:first-child {
+        width: 92%;
+    }
+    .modulos-de-curso .modulo p:last-child {
+        width: 8%;
+    }
+    .alumnos-inscritos .tabla-alumnos {
+        border: 1px solid #000;
+    }
+}
+
+@media screen and (max-width:700px){
+    .modulos-de-curso .modulo p:first-child {
+        width: 88%;
+    }
+    .modulos-de-curso .modulo p:last-child {
+        width: 12%;
+    }
+    .cont-buscar-alumno {
+        padding: 0px;
+    }
+    .cont-buscar-alumno input[type="search"]{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:500px){
+    .modulos-de-curso .modulo p:first-child {
+        width: 85%;
+    }
+    .modulos-de-curso .modulo p:last-child {
+        width: 15%;
+    }
+    .cont-buscar-alumno >div {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:421px){
+    .info-curso div{
+        flex-direction: column;
+        justify-content: center;
+        height: 100px;
+    }
+    .info-curso div a{
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width:410px){
+    .modulos-de-curso .modulo p:first-child {
+        width: 82%;
+    }
+    .modulos-de-curso .modulo p:last-child {
+        width: 18%;
+    }
+}
+
+
+
+/* Aqui estan lo estilos de formTest */
+
+.cont-form-test form {
+    width: 430px;
+    padding: 20px;
+    margin: 0px auto;
+}
+form .nombre-test {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #000;
+    position: sticky;
+    top: 81px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+form .nombre-test input {
+    height: 47px;
+    padding-left: 15px;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.nombre-test label {
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+.nombre-test div {
+    display: flex;
+    justify-content: center;
+}
+.nombre-test div button {
+    width: 106px;
+    height: 35px;
+    font-size: 15px;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    margin-right: 13px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+.nombre-test div button:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+.nombre-test div a {
+    width: 106px;
+    height: 35px;
+    background-color: gray;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+form .preguntas {
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000;
+}
+.preguntas > input {
+}
+.preguntas input[type="text"] {
+    height: 47px;
+    padding-left: 15px;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.preguntas .label{
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+.preguntas .cont-respuestas {
+    border-top: 1px solid #adadad;
+    border-bottom: 1px solid #adadad;
+    padding: 10px 0px;
+}
+.cont-respuestas > div{
+    margin-top: 10px;
+}
+.cont-respuestas > div:first-child{
+    margin-top: 0px;
+}
+.cont-respuestas > div input[type="radio"] {
+    margin-right: 10px;
+}
+.cont-respuestas > div input[type="text"]{
+    width: 300px;
+}
+
+small{
+    color: red;
+}
+
+.modulos-de-curso > div .deshabilitado{
+    background-color: #8d8d8d;
+    border: 1px solid #8d8d8d;
+    cursor: none;
+}
+
+@media screen and (max-width: 570px){
+    .cont-form-test form{
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width:519px){
+    .cont-respuestas > div input[type="text"] {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:411px){
+    .cont-respuestas > div input[type="text"] {
+        width: 87%;
+    }
+}

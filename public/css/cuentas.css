@@ -1,0 +1,241 @@
+.cont-desc {
+    background-color: #fff;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 17px 17px 17px 26px;
+    /* border-bottom: 1px solid rgb(166, 166, 166); */
+}
+.cont-desc h2 {
+    font-size: 30px;
+}
+.cont-a-vinculos {
+    height: 250px;
+    background-color: #fff;
+    padding: 20px 30px 0px 30px;
+}
+.cont-a-vinculos ul li {
+    height: 60px;
+    border-bottom: 1px solid rgb(166, 166, 166);
+    display: flex;
+    align-items: center;
+}
+.cont-a-vinculos ul li a {
+    text-decoration: none;
+    color: #000;
+}
+.cont-a-vinculos ul li a:hover {
+    color: blue;
+    text-decoration:underline;
+}
+
+/* Aqui esta los estilos de agregar profesor */
+
+.cont-form-aggProfe {
+    height: 500px;
+    background-color: #fff;
+    padding: 20px 30px 0px 30px;
+}
+.cont-form-aggProfe form {
+    width: 400px;
+    height: 479px;
+    margin: 0px auto;
+    padding: 0px 15px;
+    display: flex;
+    flex-direction: column;
+}
+.cont-form-aggProfe form select {
+    width: 50px;
+}
+.cont-form-aggProfe form label {
+    margin-top: 12px;
+}
+.cont-form-aggProfe form input {
+    height: 47px;
+    padding-left: 15px;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.cont-form-aggProfe form div {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-form-aggProfe form div button {
+    font-size: 15px;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    padding: 9px 25px;
+    margin-right: 13px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+.cont-form-aggProfe form div button:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+.cont-form-aggProfe form div a {
+    background-color: gray;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 5px;
+}
+
+
+@media screen and (max-width: 544px){
+    .cont-form-aggProfe{
+        padding: 20px 15px 0px 15px;
+    }
+    .cont-form-aggProfe form{
+        width: 100%;
+        padding: 0px 1px;
+    }
+}
+
+
+/* Aqui estan los estilos de Agregar Alumno */
+.cont-form-aggAlumno {
+    height: 460px;
+    background-color: #fff;
+    padding: 20px 30px 0px 30px;
+}
+.cont-form-aggAlumno form {
+    width: 400px;
+    height: 440px;
+    margin: 0px auto;
+    padding: 0px 15px;
+    display: flex;
+    flex-direction: column;
+}
+.cont-form-aggAlumno form select {
+    width: 50px;
+}
+.cont-form-aggAlumno form label {
+    margin-top: 12px;
+}
+.cont-form-aggAlumno form input {
+    height: 47px;
+    padding-left: 15px;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.cont-form-aggAlumno form div {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-form-aggAlumno form div button {
+    font-size: 15px;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    padding: 9px 25px;
+    margin-right: 13px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+.cont-form-aggAlumno form div button:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+.cont-form-aggAlumno form div a {
+    background-color: gray;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 5px;
+}
+
+
+@media screen and (max-width: 544px){
+    .cont-form-aggAlumno{
+        padding: 20px 15px 0px 15px;
+    }
+    .cont-form-aggAlumno form{
+        width: 100%;
+        padding: 0px 1px;
+    }
+}
+/* Aqui estan los estilos de eliminar cuenta */
+
+.cont-form-eliminarCuenta {
+    height: 230px;
+    background-color: #fff;
+    padding: 20px 30px 0px 30px;
+}
+.cont-form-eliminarCuenta form {
+    width: 400px;
+    height: 210px;
+    margin: 0px auto;
+    padding: 0px 15px;
+    display: flex;
+    flex-direction: column;
+}
+.cont-form-eliminarCuenta form select {
+    width: 50px;
+}
+.cont-form-eliminarCuenta form label {
+    margin-top: 12px;
+}
+.cont-form-eliminarCuenta form input {
+    height: 47px;
+    padding-left: 15px;
+    outline: none;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+.cont-form-eliminarCuenta form div {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-form-eliminarCuenta form div button {
+    font-size: 15px;
+    background-color: darkblue;
+    color: #fff;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    padding: 9px 25px;
+    margin-right: 13px;
+    cursor: pointer;
+    transition: background-color .5s ease;
+}
+.cont-form-eliminarCuenta form div button:hover {
+    background-color: #fff;
+    color: darkblue;
+}
+.cont-form-eliminarCuenta form div a {
+    background-color: gray;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 5px;
+}
+
+small {
+    color: red;
+}
+
+@media screen and (max-width: 540px){
+    .cont-form-eliminarCuenta{
+        padding: 20px 15px 0px 15px;
+    }
+    .cont-form-eliminarCuenta form{
+        width: 100%;
+        padding: 0px 1px;
+    }
+}
