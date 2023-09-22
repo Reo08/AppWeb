@@ -2,7 +2,7 @@
 
 @section('titulo', 'Configuracion')
 @section('cssJs')
-    <link rel="stylesheet" href="{{aset('css/configuracion.css')}}">
+    <link rel="stylesheet" href="{{asset('css/configuracion.css')}}">
     <script src="{{asset('js/configuracion.js')}}" defer></script>
 @endsection
     
