@@ -292,13 +292,13 @@ class PlataformaController extends Controller
     }
     public function editandoImg(EditandoImg $request){
         if($request->hasFile('imgPerfil')){
-            $path = "imgPerfilProfesor/";
+            $path = "imgPerfil/";
 
             $nombre = Str::slug($request->file('imgPerfil')->getClientOriginalName()).'.'.trim($request->file('imgPerfil')->getClientOriginalExtension());
             $request->imgPerfil->storeAs($path,$nombre,'public');
 
             $usuario = User::find(Auth::user()->identificacion);
-            $usuario->img_url = "/app-web/storage/app/public/".$path.$nombre;
+            $usuario->img_url = $path.$nombre;
             $usuario->update();
             return redirect()->route('area-personal.perfil')->with('alert','Imagen de perfil ha sido actualizada');
         }

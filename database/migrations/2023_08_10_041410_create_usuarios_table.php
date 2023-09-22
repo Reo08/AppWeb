@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('contrasena');
             $table->string('rol')->nullable();
             $table->boolean('admin')->nullable();
-            $table->string('img_url')->default('/app-web/public/img/avatar.jpg')->nullable();
+            $table->string('img_url')->default('img/avatar.jpg')->nullable();
             $table->timestamps();
         });
     }

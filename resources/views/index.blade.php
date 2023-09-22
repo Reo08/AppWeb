@@ -60,12 +60,12 @@
     </main>
     <footer>
         <section class="sec-social">
-            <img src="/app-web/public/img/logo-blanco.png" alt="">
+            <img src="{{asset('img/logo-blanco.png')}}" alt="">
             <div>
                 <a href="">Ruta para facebook https</a>
-                <img src="/app-web/storage/app/public/icons-redes/facebook.png" alt="">
+                <img src="{{asset('icons-redes/facebook.png')}}" alt="">
                 <a href="">Ruta para youtube https</a>
-                <img src="/app-web/storage/app/public/icons-redes/youtube.png" alt="">
+                <img src="{{asset('icons-redes/youtube.png')}}" alt="">
             </div>
         </section>
         <section class="sec-copy">

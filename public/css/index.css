@@ -73,7 +73,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/app-web/storage/app/public/fondo/paisaje_2.jpg');
+    background-image: url('fondo/paisaje_2.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
