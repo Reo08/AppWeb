@@ -2,7 +2,7 @@
 
 @section('titulo', 'Administrar')
 @section('cssJs')
-    <link rel="stylesheet" href="/app-web/resources/css/administrar.css">
+    <link rel="stylesheet" href="{{asset('css/administrar.css')}}">
 @endsection
     
 @section('titulo-encabezado', 'Administrar')

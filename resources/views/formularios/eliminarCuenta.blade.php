@@ -2,8 +2,8 @@
 
 @section('titulo', 'Cuentas')
 @section('cssJs')
-    <link rel="stylesheet" href="/app-web/resources/css/cuentas.css">
-    <script src="/app-web/resources/js/eliminarCuenta.js" defer></script>
+    <link rel="stylesheet" href="{{asset('css/cuentas.css')}}">
+    <script src="{{asset('js/eliminarCuenta.js')}}" defer></script>
 @endsection
     
 @section('titulo-encabezado', 'Cuentas')

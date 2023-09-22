@@ -5,29 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Perfil</title>
-    <link rel="stylesheet" href="/app-web/resources/css/header_nav_encabezado.css">
+    <link rel="stylesheet" href="{{asset('css/header_nav_encabezado.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;700&family=Nunito+Sans:opsz,wght@6..12,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;700&family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,700&display=swap" rel="stylesheet">
-    <script src="/app-web/resources/js/areaPersonal.js" defer type="module"></script>
-    <script src="/app-web/resources/js/btn-burguer.js" defer type="module"></script>
-    <script src="/app-web/resources/js/perfil.js" defer></script>
-    <link rel="stylesheet" href="/app-web/resources/css/perfil.css">
+    <script src="{{asset('js/areaPersonal.js')}}" defer type="module"></script>
+    <script src="{{asset('js/btn-burguer.js')}}" defer type="module"></script>
+    <script src="{{asset('js/perfil.js')}}" defer></script>
+    <link rel="stylesheet" href="{{asset('css/perfil.css')}}">
 </head>
 <body>
     <div class="cont-principal">
         <header>
-            <a href=""><img src="/app-web/public/img/ESCUDO-COLOR-H.png" alt=""></a>
+            <a href=""><img src="{{asset('img/ESCUDO-COLOR-H.png')}}" alt=""></a>
             <div class="header-nav">
                 <ul>
                     <li class="config-nav-header"><span class="material-symbols-outlined">settings</span></li>
-                    <li class="img-perfil"><img src="{{Auth::user()->img_url}}" alt=""></li>
+                    <li class="img-perfil"><img src="{{asset(Auth::user()->img_url)}}" alt=""></li>
                 </ul>
                 <div class="despliegue-perfil">
                     <div class="info">
-                        <div class="cont-img"><img src="{{Auth::user()->img_url}}" alt=""></div>
+                        <div class="cont-img"><img src="{{asset(Auth::user()->img_url)}}" alt=""></div>
                         <div class="nombre-correo">
                             <p>{{Auth::user()->nombre}}</p>
                             <p>{{Auth::user()->correo}}</p>

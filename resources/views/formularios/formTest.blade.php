@@ -2,8 +2,8 @@
 
 @section('titulo', 'Curso')
 @section('cssJs')
-    <link rel="stylesheet" href="/app-web/resources/css/curso.css">
-    <script src="/app-web/resources/js/formTest.js" defer type="module"></script>
+    <link rel="stylesheet" href="{{asset('css/curso.css')}}">
+    <script src="{{asset('js/formTest.js')}}" defer type="module"></script>
 @endsection
     
 @section('titulo-encabezado', 'Curso - Crear test')

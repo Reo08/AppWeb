@@ -2,7 +2,7 @@
 
 @section('titulo', 'Perfil')
 @section('cssJs')
-    <link rel="stylesheet" href="/app-web/resources/css/editarPerfil.css">
+    <link rel="stylesheet" href="{{asset('css/editarPerfil.css')}}">
 @endsection
     
 @section('titulo-encabezado', 'Perfil')

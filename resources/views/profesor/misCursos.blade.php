@@ -2,8 +2,8 @@
 
 @section('titulo', 'Mis Cursos')
 @section('cssJs')
-    <link rel="stylesheet" href="/app-web/resources/css/area-personal.css">
-    <script src="/app-web/resources/js/misCursos.js" defer type="module"></script>
+    <link rel="stylesheet" href="{{asset('css/area-personal.css')}}">
+    <script src="{{asset('js/misCursos.js')}}" defer type="module"></script>
 @endsection
     
 @section('titulo-encabezado', 'Mis Cursos')

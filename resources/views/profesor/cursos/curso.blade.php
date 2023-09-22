@@ -2,9 +2,9 @@
 
 @section('titulo', 'Curso')
 @section('cssJs')
-    <link rel="stylesheet" href="/app-web/resources/css/curso.css">
-    <script src="/app-web/resources/js/eliminarCurso.js" defer></script>
-    <script src="/app-web/resources/js/curso.js" defer></script>
+    <link rel="stylesheet" href="{{asset('css/curso.css')}}">
+    <script src="{{asset('js/eliminarCurso.js')}}" defer></script>
+    <script src="{{asset('js/curso.js')}}" defer></script>
 @endsection
     
 @section('titulo-encabezado', 'Curso')

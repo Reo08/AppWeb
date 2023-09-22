@@ -2,8 +2,8 @@
 
 @section('titulo', 'Area Personal')
 @section('cssJs')
-    <link rel="stylesheet" href="/app-web/resources/css/area-personal.css">
-    <script src="/app-web/resources/js/filtroCursos.js" defer type="module"></script>
+    <link rel="stylesheet" href="{{asset('css/area-personal.css')}}">
+    <script src="{{asset('js/filtroCursos.js')}}" defer type="module"></script>
 @endsection
     
 @section('titulo-encabezado', 'Area personal')

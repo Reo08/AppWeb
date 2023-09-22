@@ -2,8 +2,8 @@
 
 @section('titulo', 'Administrar')
 @section('cssJs')
-    <link rel="stylesheet" href="/app-web/resources/css/administrar.css">
-    <script src="/app-web/resources/js/crearCurso.js" defer type="module"></script>
+    <link rel="stylesheet" href="{{asset('css/administrar.css')}}">
+    <script src="{{asset('js/crearCurso.js')}}" defer type="module"></script>
 @endsection
     
 @section('titulo-encabezado', 'Administrar')

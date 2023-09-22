@@ -1,8 +1,8 @@
 @extends('layout.PGeneral')
 
 @section('titulo', 'Cambiar contraseña')
-    <link rel="stylesheet" href="/app-web/resources/css/cambiarContrasena.css">
-    <script src="/app-web/resources/js/cambiarContrasena.js" defer></script>
+    <link rel="stylesheet" href="{{asset('css/cambiarContrasena.css')}}">
+    <script src="{{asset('js/cambiarContrasena.js')}}" defer></script>
 @section('cssJs')
     
 @endsection

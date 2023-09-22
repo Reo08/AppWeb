@@ -2,7 +2,7 @@
 
 @section('titulo', 'Notas')
 @section('cssJs')
-    <link rel="stylesheet" href="/app-web/resources/css/notas.css">
+    <link rel="stylesheet" href="{{asset('css/notas.css')}}">
 @endsection
     
 @section('titulo-encabezado', 'Notas')

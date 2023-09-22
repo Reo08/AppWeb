@@ -3,8 +3,8 @@
 @section('titulo', 'Modulo')
     
 @section('cssJs')
-    <link rel="stylesheet" href="/app-web/resources/css/modulo.css">
-    <script src="/app-web/resources/js/modulo.js" defer></script>
+    <link rel="stylesheet" href="{{asset('css/modulo.css')}}">
+    <script src="{{asset('js/modulo.js')}}" defer></script>
 @endsection
 
 @section('video')
@@ -39,7 +39,7 @@
             <tbody>
                 @foreach ($pdfsModulos as $pdf)
                     <tr>
-                        <td class="td-nombrePdf"><a href="{{$pdf->url_pdf}}" target="_blank">{{$pdf->nombre_pdf}}</a></td>
+                        <td class="td-nombrePdf"><a href="{{asset($pdf->url_pdf)}}" target="_blank">{{$pdf->nombre_pdf}}</a></td>
                         <td class="td-button"><form class="form-btn-borrar" action="{{route('eliminandoPdfModulo', ['curso'=>$buscarCurso[0], 'pdf'=>$pdf->id_pdf])}}" method="POST"> @csrf @method('delete') <button>borrar</button> </form></td>
                     </tr>
                 @endforeach
@@ -49,7 +49,7 @@
         @else
             <div>
                 @foreach ($pdfsModulos as $pdf)
-                    <a href="{{$pdf->url_pdf}}" target="_blank">{{$pdf->nombre_pdf}}</a>
+                    <a href="{{asset($pdf->url_pdf)}}" target="_blank">{{$pdf->nombre_pdf}}</a>
                 @endforeach
             </div>
         @endif

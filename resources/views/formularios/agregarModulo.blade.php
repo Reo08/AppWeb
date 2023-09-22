@@ -2,8 +2,8 @@
 
 @section('titulo', 'Agregar Modulo')
 @section('cssJs')
-    <link rel="stylesheet" href="/app-web/resources/css/agregarModulo.css">
-    <script src="/app-web/resources/js/vlidacionFormularios.js" defer type="module"></script>
+    <link rel="stylesheet" href="{{asset('css/agregarModulo.css')}}">
+    <script src="{{asset('js/vlidacionFormularios.js')}}" defer type="module"></script>
 @endsection
     
 @section('titulo-encabezado', 'Curso')

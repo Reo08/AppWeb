@@ -3,10 +3,10 @@
 @section('titulo', 'Modulo')
     
 @section('cssJs')
-    <link rel="stylesheet" href="/app-web/resources/css/modulo.css">
-    <link rel="stylesheet" href="/app-web/resources/css/test.css">
+    <link rel="stylesheet" href="{{asset('css/modulo.css')}}">
+    <link rel="stylesheet" href="{{asset('css/test.css')}}">
     @if (Auth::user()->admin == 1 || $buscarCurso[0]->identificacion == Auth::user()->identificacion)
-        <script src="/app-web/resources/js/test.js" defer type="module"></script>
+        <script src="{{asset('js/test.js')}}" defer type="module"></script>
     @endif
 
 @endsection

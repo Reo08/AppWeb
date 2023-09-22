@@ -2,7 +2,7 @@
 
 @section('titulo', 'Cuentas')
 @section('cssJs')
-    <link rel="stylesheet" href="/app-web/resources/css/cuentas.css">
+    <link rel="stylesheet" href="{{asset('css/cuentas.css')}}">
 @endsection
     
 @section('titulo-encabezado', 'Cuentas')
