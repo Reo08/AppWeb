@@ -1,10 +1,10 @@
 @extends('layout.PGeneral')
 
 @section('titulo', 'Cambiar contraseña')
+
+@section('cssJs')
     <link rel="stylesheet" href="{{asset('css/cambiarContrasena.css')}}">
     <script src="{{asset('js/cambiarContrasena.js')}}" defer></script>
-@section('cssJs')
-    
 @endsection
 
 @section('titulo-encabezado', 'Configuraciones')
