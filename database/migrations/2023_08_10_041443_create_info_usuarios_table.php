@@ -15,7 +15,7 @@ return new class extends Migration
             $table->increments('id_info_usuarios');
             $table->string('ciudad')->nullable();
             $table->string('direccion')->nullable();
-            $table->string('imagen_url')->default('/app-web/public/img/avatar.jpg')->nullable();
+            $table->string('imagen_url')->default('/img/avatar.jpg')->nullable();
             $table->string('telefono')->nullable();
             $table->string('celular')->nullable();
             $table->string('identificacion')->nullable();
