@@ -23,11 +23,11 @@
             <div class="header-nav">
                 <ul>
                     <li class="config-nav-header"><span class="material-symbols-outlined">settings</span></li>
-                    <li class="img-perfil"><img src="{{Auth::user()->img_url}}" alt=""></li>
+                    <li class="img-perfil"><img src="{{asset(Auth::user()->img_url)}}" alt=""></li>
                 </ul>
                 <div class="despliegue-perfil">
                     <div class="info">
-                        <div class="cont-img"><img src="{{Auth::user()->img_url}}" alt=""></div>
+                        <div class="cont-img"><img src="{{asset(Auth::user()->img_url)}}" alt=""></div>
                         <div class="nombre-correo">
                             <p>{{Auth::user()->nombre}}</p>
                             <p>{{Auth::user()->correo}}</p>
