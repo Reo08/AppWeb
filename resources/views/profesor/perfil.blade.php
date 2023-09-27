@@ -74,7 +74,7 @@
             <div class="main-cont-color">
                 <h1>{{Auth::user()->nombre}}</h1>
                 <div class="cont-img-perfil">
-                    <img src="{{Auth::user()->img_url}}" alt="">
+                    <img src="{{asset(Auth::user()->img_url)}}" alt="">
                 </div>
                 <div class="btn-edit-img">
                     <span class="material-symbols-outlined">edit</span>
