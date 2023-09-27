@@ -293,6 +293,10 @@ class PlataformaController extends Controller
     public function editandoImg(EditandoImg $request){
         if(isset($request->validated()["imgPerfil"])){
             $nombre = Str::slug($request->file('imgPerfil')->getClientOriginalName()).'.'.trim($request->file('imgPerfil')->getClientOriginalExtension());
+            $direccion_destino = public_path("imgPerfil");
+            if(!file_exists($direccion_destino)){
+                mkdir($direccion_destino,0755,true);
+            }
 
             $request->validated()["imgPerfil"]->move(public_path("imgPerfil"),$nombre);
 
@@ -606,7 +610,11 @@ class PlataformaController extends Controller
         if(isset($request->validated()["pdf_modulo"])){
             
             $nombre = Str::slug($request->file('pdf_modulo')->getClientOriginalName()).'.'.trim($request->file('pdf_modulo')->getClientOriginalExtension());
+            $direccion_destino = public_path("pdfsModulos");
 
+            if(!file_exists($direccion_destino)){
+                mkdir($direccion_destino,0755,true);
+            }
             $request->validated()["pdf_modulo"]->move(public_path("pdfsModulos"),$nombre);
 
             $agregarPdf = new PdfsModulos();
