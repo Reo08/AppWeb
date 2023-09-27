@@ -293,15 +293,12 @@ class PlataformaController extends Controller
     public function editandoImg(EditandoImg $request){
         if(isset($request->validated()["imgPerfil"])){
             $nombre = Str::slug($request->file('imgPerfil')->getClientOriginalName()).'.'.trim($request->file('imgPerfil')->getClientOriginalExtension());
-            $direccion_destino = public_path("imgPerfil");
-            if(!file_exists($direccion_destino)){
-                mkdir($direccion_destino,0755,true);
-            }
+            $direccion_destino = "imgPerfil/";
 
-            $request->validated()["imgPerfil"]->move(public_path("imgPerfil"),$nombre);
+            $cargando = $request->validated()["imgPerfil"]->move($direccion_destino,$nombre);
 
             $usuario = User::find(Auth::user()->identificacion);
-            $usuario->img_url = "public/imgPerfil/".$nombre;
+            $usuario->img_url = "imgPerfil/".$nombre;
             $usuario->update();
             return redirect()->route('area-personal.perfil')->with('alert','Imagen de perfil ha sido actualizada');
         }
@@ -610,12 +607,10 @@ class PlataformaController extends Controller
         if(isset($request->validated()["pdf_modulo"])){
             
             $nombre = Str::slug($request->file('pdf_modulo')->getClientOriginalName()).'.'.trim($request->file('pdf_modulo')->getClientOriginalExtension());
-            $direccion_destino = public_path("pdfsModulos");
+            $direccion_destino = "pdfsModulos/";
 
-            if(!file_exists($direccion_destino)){
-                mkdir($direccion_destino,0755,true);
-            }
-            $request->validated()["pdf_modulo"]->move(public_path("pdfsModulos"),$nombre);
+
+            $cargando = $request->validated()["pdf_modulo"]->move("pdfsModulos",$nombre);
 
             $agregarPdf = new PdfsModulos();
             $agregarPdf->nombre_pdf = $nombre;
