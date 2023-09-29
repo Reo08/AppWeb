@@ -648,6 +648,10 @@ class PlataformaController extends Controller
 
     }
     public function eliminandoPdfModulo($curso,PdfsModulos $pdf){
+        $url = str_replace("storage", "public", $pdf->url_pdf);
+
+        Storage::delete($url);
+
         $pdf->delete();
         return redirect()->route('curso',$curso)->with('alert','Pdf eliminado');
     }
