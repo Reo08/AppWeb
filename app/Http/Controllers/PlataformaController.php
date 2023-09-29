@@ -35,6 +35,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
 use PhpParser\Node\Stmt\Return_;
+use Illuminate\Support\Facades\Storage;
 
 class RemplazarInscripcion {
     public $identificacion;
@@ -291,28 +292,18 @@ class PlataformaController extends Controller
         return redirect()->route('area-personal.perfil')->with('alert', 'Datos actualizados');
     }
     public function editandoImg(EditandoImg $request){
-        if(isset($request->validated()["imgPerfil"])){
-            $nombre = Str::slug($request->file('imgPerfil')->getClientOriginalName()).'.'.trim($request->file('imgPerfil')->getClientOriginalExtension());
-            $direccion_destino = "imgPerfil/";
+        if($request->hasFile('imgPerfil')){
+            $nombre = Str::slug($request->file("imgPerfil")->getClientOriginalName()).'.'.trim($request->file('imgPerfil')->getClientOriginalExtension());
 
-            $cargando = $request->validated()["imgPerfil"]->move($direccion_destino,$nombre);
+            $imagen_ruta = $request->file('imgPerfil')->storeAs('public/imgPerfil',$nombre);
+
+            $url = Storage::url($imagen_ruta);
 
             $usuario = User::find(Auth::user()->identificacion);
-            $usuario->img_url = "imgPerfil/".$nombre;
+            $usuario->img_url = $url;
             $usuario->update();
             return redirect()->route('area-personal.perfil')->with('alert','Imagen de perfil ha sido actualizada');
         }
-        // if($request->hasFile('imgPerfil')){
-        //     $path = "imgPerfil/";
-
-        //     $nombre = Str::slug($request->file('imgPerfil')->getClientOriginalName()).'.'.trim($request->file('imgPerfil')->getClientOriginalExtension());
-        //     $request->imgPerfil->storeAs($path,$nombre,'public');
-
-        //     $usuario = User::find(Auth::user()->identificacion);
-        //     $usuario->img_url = $path.$nombre;
-        //     $usuario->update();
-        //     return redirect()->route('area-personal.perfil')->with('alert','Imagen de perfil ha sido actualizada');
-        // }
     }
 
 
@@ -604,23 +595,40 @@ class PlataformaController extends Controller
     }
     public function agregandoPdfModulo(AgregandoPdfModulo $request, $curso,$modulo){
         $buscarModulo = Modulos::where('slug','=',$modulo)->get();
-        if(isset($request->validated()["pdf_modulo"])){
+
+        // if(isset($request->validated()["pdf_modulo"])){
             
-            $nombre = Str::slug($request->file('pdf_modulo')->getClientOriginalName()).'.'.trim($request->file('pdf_modulo')->getClientOriginalExtension());
-            $direccion_destino = "pdfsModulos/";
+        //     $nombre = Str::slug($request->file('pdf_modulo')->getClientOriginalName()).'.'.trim($request->file('pdf_modulo')->getClientOriginalExtension());
+        //     $direccion_destino = "pdfsModulos/";
 
 
-            $cargando = $request->validated()["pdf_modulo"]->move("pdfsModulos",$nombre);
+        //     $cargando = $request->validated()["pdf_modulo"]->move("pdfsModulos",$nombre);
+
+        //     $agregarPdf = new PdfsModulos();
+        //     $agregarPdf->nombre_pdf = $nombre;
+        //     $agregarPdf->url_pdf = "pdfsModulos/".$nombre;
+        //     $agregarPdf->id_modulos = $buscarModulo[0]->id_modulos;
+        //     $agregarPdf->save();
+            
+
+        //     return redirect()->route('curso', $curso)->with('alert','Pdf agregado');
+
+        // }
+
+        if($request->hasFile("pdf_modulo")){
+            $nombre = Str::slug($request->file("pdf_modulo")->getClientOriginalName()).'.'.trim($request->file("pdf_modulo")->getClientOriginalExtension());
+
+            $imagen_ruta = $request->file("pdf_modulo")->storeAs("public/pdfsModulos",$nombre);
+
+            $url = Storage::url($imagen_ruta);
 
             $agregarPdf = new PdfsModulos();
             $agregarPdf->nombre_pdf = $nombre;
-            $agregarPdf->url_pdf = "pdfsModulos/".$nombre;
+            $agregarPdf->url_pdf = $url;
             $agregarPdf->id_modulos = $buscarModulo[0]->id_modulos;
             $agregarPdf->save();
-            
 
             return redirect()->route('curso', $curso)->with('alert','Pdf agregado');
-
         }
 
         // if($request->hasFile('pdf_modulo')){
