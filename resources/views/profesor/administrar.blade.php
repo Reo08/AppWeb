@@ -15,8 +15,9 @@
     </div>
     <div class="cont-a-vinculos">
         <ul>
-            <li><a href="{{route('administrar.crear-curso')}}">Crear curso</a></li>
+            
             @if (Auth::user()->admin == 1)
+                <li><a href="{{route('administrar.crear-curso')}}">Crear curso</a></li>
                 <li> <a href="{{route('administrar.vincular-profesor')}}">Vincular profesor</a></li>
                 <li><a href="{{route('administrar.desvincular-profesor')}}">Desvincular profesor</a></li>  
             @endif
